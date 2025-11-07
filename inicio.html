@@ -17,6 +17,21 @@
         .text-shadow {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
+        /* Container responsivo para vídeo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -167,30 +182,26 @@
             </div>
         </div>
     </section>
-    
-    <!-- 5. Seção de Galeria --><section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
+
+    <!-- 5. Seção Vídeo (Nova Posição) --><section class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                Nossa Comunidade
+                Uma Mensagem Especial
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <img 
-                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht84QE2fEGMDBlstWkElOfW4rJNIciuqPw_i7IQmtnASyvouHE-6DdINJLgQLw4jVtEALhfdOlCpjxHCbVqeR4oIAg8XTiWVshw9gRA4V38ozre7LLsGzka-y_EpNDMBG98YbESpTfCaqERatHKvwQHuqdfHfuUyDHSabxgywuNMz0mC3HDkVR7gYvQTE/s1280/foto1.png" 
-                    alt="Imagem de divulgação 1" 
-                    class="w-full h-80 object-cover rounded-2xl shadow-lg"
-                    onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Imagem+1'"
-                >
-                <img 
-                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIKZK2jb0hfc2a8XdIDRF0UOhNqG3H0HFzYTlyki8QWEvQE7YD33w8mvyHvdZRWZXr0wyyjLhn82fuMi1I6qIt8u2ndfp8GogxaizcfUeaN46HbMRrhVWL9_9FgitQ8Ei-DRChaOw4J-tQx7TYHAsSqaBf52Oz5h5W5I65Qydk5kd9ddXr5ox9WM2juXk/s1280/foto2.png" 
-                    alt="Imagem de divulgação 2" 
-                    class="w-full h-80 object-cover rounded-2xl shadow-lg"
-                    onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Imagem+2'"
-                >
+            <div class="video-container rounded-2xl shadow-lg overflow-hidden border">
+                <iframe 
+                    src="https://www.youtube.com/embed/6ote1mpLlxo?si=hnWfBJYjmGnHsDFL" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
-
-    <!-- 6. Seção de Localização --><section class="py-16 md:py-24 bg-white">
+    
+    <!-- 6. Seção de Localização --><section class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
                 Como Chegar
@@ -250,5 +261,4 @@
     </footer>
 
 </body>
-
 </html>
