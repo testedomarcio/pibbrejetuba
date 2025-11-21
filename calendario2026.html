@@ -55,15 +55,29 @@
             opacity: 0;
         }
 
-        /* Efeito de Destaque no Card Principal */
-        .main-calendar-card {
-            background: linear-gradient(145deg, #ffffff, #f0f9ff);
-            border: 2px solid #1e3a8a;
-            transition: all 0.3s ease;
+        /* Estilo do Acordeão (Detalhes/Resumo) */
+        details > summary {
+            list-style: none;
+            cursor: pointer;
         }
-        .main-calendar-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] > summary .arrow-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Efeito ao abrir */
+        details[open] > div {
+            animation: openDetail 0.3s ease-in-out forwards;
+        }
+        @keyframes openDetail {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .date-badge {
+            font-variant-numeric: tabular-nums;
         }
     </style>
 </head>
@@ -81,89 +95,434 @@
                 <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
             </a>
             
-            <h1 class="text-3xl font-bold mb-1">Planejamento 2026</h1>
-            <p class="text-blue-200 font-light">Organização e datas importantes</p>
+            <h1 class="text-3xl font-bold mb-1">Calendário 2026</h1>
+            <div class="inline-block bg-church-accent text-white text-xs font-bold px-3 py-1 rounded-full mt-2">
+                18 Anos: Unidos pelo Amor
+            </div>
+            <p class="text-blue-200 text-xs mt-2 italic">"Vivos em Comunhão" (1 João 4:7)</p>
         </div>
     </header>
 
     <!-- Conteúdo Principal -->
-    <main class="max-w-md mx-auto px-4 space-y-8 relative z-20 -mt-6">
+    <main class="max-w-md mx-auto px-4 space-y-6 relative z-20 -mt-6">
 
-        <!-- SEÇÃO 1: Calendários Denominacionais -->
-        <section class="animate-slide-up">
-            <h2 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-3 pl-2 flex items-center gap-2">
-                <i class="fa-solid fa-globe text-slate-400"></i>
-                Denominacional
-            </h2>
-            
-            <div class="grid gap-3">
-                <!-- Convenção Brasileira (CBB) -->
-                <a href="https://www.convencaobatista.com.br/site/pagina.php?MEN_ID=61" target="_blank" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-slate-50 transition-colors group border-l-4 border-l-green-500">
-                    <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="font-bold text-slate-800 text-sm">Convenção Batista Brasileira</h3>
-                        <p class="text-xs text-slate-500">Calendário Nacional</p>
-                    </div>
-                    <i class="fa-solid fa-external-link-alt text-slate-300 text-sm"></i>
-                </a>
-
-                <!-- Convenção Estadual (CBEES) -->
-                <a href="https://www.batistas.es/calendario-2026" target="_blank" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-slate-50 transition-colors group border-l-4 border-l-blue-400">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="font-bold text-slate-800 text-sm">Batistas do Espírito Santo</h3>
-                        <p class="text-xs text-slate-500">Calendário Estadual</p>
-                    </div>
-                    <i class="fa-solid fa-external-link-alt text-slate-300 text-sm"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- SEÇÃO 2: Agenda da Igreja (DESTAQUE) -->
-        <section class="animate-slide-up" style="animation-delay: 0.2s;">
-            <h2 class="text-sm font-bold text-church-primary uppercase tracking-wider mb-3 pl-2 flex items-center gap-2">
-                <i class="fa-solid fa-star text-church-accent"></i>
-                Agenda Oficial PIB
-            </h2>
-
-            <a href="https://docs.google.com/document/d/1ornXyrxpXgvRW_MfiBcOzO8bDvbNdWwDQgTXsHt1FcI/edit?usp=sharing" target="_blank" class="block relative group">
-                <!-- Efeito de 'folhas' atrás do card -->
-                <div class="absolute inset-0 bg-blue-900 rounded-2xl transform rotate-2 translate-y-2 opacity-10 group-hover:rotate-3 transition-transform"></div>
-                <div class="absolute inset-0 bg-church-primary rounded-2xl transform -rotate-1 translate-y-1 opacity-20 group-hover:-rotate-2 transition-transform"></div>
-                
-                <!-- Card Principal -->
-                <div class="main-calendar-card relative bg-white p-6 rounded-2xl text-center">
-                    <div class="w-16 h-16 bg-church-primary text-white rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                        <i class="fa-regular fa-calendar-check"></i>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold text-church-primary mb-1">Agenda 2026</h3>
-                    <p class="text-sm text-slate-600 font-medium mb-4">PIB em Brejetuba</p>
-                    
-                    <div class="border-t border-dashed border-slate-200 my-4"></div>
-                    
-                    <p class="text-xs text-slate-500 mb-4 leading-relaxed px-2">
-                        Consulte todas as datas de cultos, eventos especiais e reuniões administrativas da nossa igreja.
-                    </p>
-
-                    <span class="inline-flex items-center justify-center gap-2 bg-church-primary text-white font-bold py-3 px-6 rounded-xl w-full shadow-md group-hover:bg-church-secondary transition-colors">
-                        <span>Acessar Agenda Completa</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-                </div>
+        <!-- Links Denominacionais -->
+        <section class="grid grid-cols-2 gap-3 animate-slide-up">
+            <a href="https://www.convencaobatista.com.br/site/pagina.php?MEN_ID=61" target="_blank" class="glass-card p-3 rounded-xl flex flex-col items-center text-center gap-2 hover:bg-slate-50 transition-colors border-t-4 border-t-green-500">
+                <i class="fa-solid fa-earth-americas text-green-600 text-xl"></i>
+                <span class="text-xs font-bold text-slate-700">Conv. Brasileira</span>
+            </a>
+            <a href="https://www.batistas.es/calendario-2026" target="_blank" class="glass-card p-3 rounded-xl flex flex-col items-center text-center gap-2 hover:bg-slate-50 transition-colors border-t-4 border-t-blue-400">
+                <i class="fa-solid fa-location-dot text-blue-500 text-xl"></i>
+                <span class="text-xs font-bold text-slate-700">Batistas ES</span>
             </a>
         </section>
 
-        <!-- Dica de Uso -->
-        <div class="text-center animate-slide-up" style="animation-delay: 0.4s;">
-            <p class="text-xs text-slate-400 bg-slate-100 inline-block px-3 py-1 rounded-full">
-                <i class="fa-brands fa-google mr-1"></i> Arquivo visualizado via Google Docs
-            </p>
-        </div>
+        <!-- LISTA DE MESES (Acordeão) -->
+        <section class="space-y-3 animate-slide-up" style="animation-delay: 0.1s;">
+            
+            <!-- Janeiro -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">01</span>
+                        <span class="font-bold text-slate-700">Janeiro</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">17</span>
+                        <p class="text-slate-600">Reserva do Templo (Evento Particular)</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">19-25</span>
+                        <p class="text-slate-600">Semana Batista (Assembleia CBB)</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">25</span>
+                        <p class="text-slate-600">08h Abertura Campanha Missões Mundiais</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Fevereiro -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">02</span>
+                        <span class="font-bold text-slate-700">Fevereiro</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">01</span>
+                        <p class="text-slate-600">Dia Aliança Batista Mundial / 08h Ceia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">07</span>
+                        <p class="text-slate-600">14h Reunião Diretoria</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">08</span>
+                        <p class="text-slate-600">08h Assembleia Regular</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">22</span>
+                        <p class="text-slate-600">08h Encerramento Missões Mundiais</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Março -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">03</span>
+                        <span class="font-bold text-slate-700">Março</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">01</span>
+                        <p class="text-slate-600">Dia Esposa de Pastor / 08h Ceia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">07</span>
+                        <p class="text-slate-600">16h Curso Novos Membros</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">08</span>
+                        <p class="text-slate-600">Mobilização Missões / 19h Dia da Mulher</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">14</span>
+                        <p class="text-slate-600">16h Curso Novos Membros</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">28</span>
+                        <p class="text-slate-600">Capacitação OECBBES / 16h Curso Novos Membros</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Abril -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">04</span>
+                        <span class="font-bold text-slate-700">Abril</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">04</span>
+                        <p class="text-slate-600">Conexão Missões (Pedra Azul)</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-lg border border-amber-100">
+                        <div class="flex gap-3">
+                            <span class="font-bold text-church-accent date-badge w-6 shrink-0">05</span>
+                            <div>
+                                <p class="font-bold text-amber-800">Domingo de Páscoa</p>
+                                <p class="text-xs text-slate-600 mt-1">Sem culto pela manhã. Celebração e Ceia às 19h.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">10-12</span>
+                        <p class="text-slate-600">Retiro Promotores Missões</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">18</span>
+                        <p class="text-slate-600">14h Reunião Diretoria</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">19</span>
+                        <p class="text-slate-600">08h Assembleia Regular</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">26</span>
+                        <p class="text-slate-600">Dia da EBD</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Maio -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">05</span>
+                        <span class="font-bold text-slate-700">Maio (Mês da Família)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">01</span>
+                        <p class="text-slate-600">Início Campanha Oração Família</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">03</span>
+                        <p class="text-slate-600">Ação Social / 08h Ceia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">10</span>
+                        <p class="text-slate-600">19h Dia das Mães (Culto Especial)</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">30</span>
+                        <p class="text-slate-600">Encontro de Casais Abaoeste</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">31</span>
+                        <p class="text-slate-600">19h Culto da Família</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Junho -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">06</span>
+                        <span class="font-bold text-slate-700">Junho</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">06</span>
+                        <p class="text-slate-600">16h Escola Líderes / 19h Curso Novos Membros</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">07</span>
+                        <p class="text-slate-600">Dia do Homem / 08h Ceia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">13</span>
+                        <p class="text-slate-600">14h Diretoria / 19h Curso Novos Membros</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">14</span>
+                        <p class="text-slate-600">Dia do Pastor / 08h Assembleia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">15-21</span>
+                        <p class="text-slate-600">Semana Batista Capixaba</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">20</span>
+                        <p class="text-slate-600">19h Curso Novos Membros</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">24</span>
+                        <p class="text-slate-600">3 Anos Família Pastoral em Brejetuba</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Julho -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">07</span>
+                        <span class="font-bold text-slate-700">Julho (Missões Estaduais)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">05</span>
+                        <p class="text-slate-600">08h Abertura Missões / 19h Ceia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">17</span>
+                        <p class="text-slate-600">117ª Assembleia Convenção ES</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">25</span>
+                        <p class="text-slate-600">09h Assembleia Abaoeste na PIB Brejetuba</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">26</span>
+                        <p class="text-slate-600">Encerramento Missões Estaduais</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Agosto -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">08</span>
+                        <span class="font-bold text-slate-700">Agosto</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">02</span>
+                        <p class="text-slate-600">08h Ceia / 19h Culto Jovens</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">09</span>
+                        <p class="text-slate-600">19h Dia dos Pais</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">21-23</span>
+                        <p class="text-slate-600">Retiro Promotores JMN</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">30</span>
+                        <p class="text-slate-600">14h Diretoria / 08h Assembleia / Encerramento Líderes</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Setembro -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">09</span>
+                        <span class="font-bold text-slate-700">Setembro (Missões Nacionais)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">06</span>
+                        <p class="text-slate-600">08h Abertura Missões / 19h Ceia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">11-13</span>
+                        <p class="text-slate-600">Retiro Músicos Batistas</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">13</span>
+                        <p class="text-slate-600">Dia Missões Nacionais</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">19</span>
+                        <p class="text-slate-600">Culto Fazenda Leogildo (2 Anos)</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">26</span>
+                        <p class="text-slate-600">16h Início Curso de Batismo</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Outubro -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">10</span>
+                        <span class="font-bold text-slate-700">Outubro (Mês das Crianças)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">03</span>
+                        <p class="text-slate-600">Festa Dia das Crianças</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">04</span>
+                        <p class="text-slate-600">08h Ceia / Início 40 Dias Oração</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">10</span>
+                        <p class="text-slate-600">16h Curso Batismo</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">17</span>
+                        <p class="text-slate-600">14h Reunião Diretoria</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">18</span>
+                        <p class="text-slate-600">08h Assembleia Regular</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">24/31</span>
+                        <p class="text-slate-600">16h Curso Batismo</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Novembro -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">11</span>
+                        <span class="font-bold text-slate-700">Novembro (Aniversário Igreja)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">01</span>
+                        <p class="text-slate-600">08h Ceia</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">07</span>
+                        <p class="text-slate-600">14h Reunião Organizadores Aniversário</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">14</span>
+                        <p class="text-slate-600">Celebração 18 Anos / Encerramento 40 Dias</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                        <div class="flex gap-3">
+                            <span class="font-bold text-church-primary date-badge w-6 shrink-0">15</span>
+                            <p class="font-bold text-church-primary">Celebração Oficial 18 Anos</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">21/28</span>
+                        <p class="text-slate-600">16h Curso Novos Membros</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Dezembro -->
+            <details class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 text-church-primary rounded-lg flex items-center justify-center font-bold text-sm">12</span>
+                        <span class="font-bold text-slate-700">Dezembro</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 arrow-icon transition-transform duration-300"></i>
+                </summary>
+                <div class="p-4 border-t border-slate-100 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">05</span>
+                        <p class="text-slate-600">16h Curso Novos Membros</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">12</span>
+                        <p class="text-slate-600">Dia da Bíblia / 14h Diretoria</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">13</span>
+                        <p class="text-slate-600">08h Assembleia Regular</p>
+                    </div>
+                    <div class="bg-green-50 p-3 rounded-lg border border-green-100">
+                        <div class="flex gap-3">
+                            <span class="font-bold text-green-700 date-badge w-6 shrink-0">20</span>
+                            <p class="font-bold text-green-800">19h Culto de Natal</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="font-bold text-church-primary date-badge w-6 shrink-0">31</span>
+                        <p class="text-slate-600">22h Culto Ano Novo / Ceia</p>
+                    </div>
+                </div>
+            </details>
+
+        </section>
 
     </main>
 </body>
