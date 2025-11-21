@@ -76,11 +76,11 @@
         
         <!-- Cabeçalho -->
         <header class="flex flex-col items-center text-center mb-8 animate-fade-in">
-            <!-- Logo com borda branca e sombra -->
-            <div class="relative w-32 h-32 mb-4 rounded-full bg-white shadow-xl flex items-center justify-center overflow-hidden p-2">
+            <!-- Logo Livre (Sem círculo) -->
+            <div class="w-full flex justify-center mb-6 px-4">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitWVDfev2LtJMx5gW2IbVQ8Jc5ht3OIeV0M7XBd63dIpiZQdjioIScUa29fo2My-tjY59wHfkC2vs5deUQyswZtzU7bP8khxqnWQ4CeUGMmu9Z2na0qThdLcpPM9ncCxGRTy0FkGh3IfPC6jiZsTOiOPTCur8Zs3swp92FJALSgsGVTJHs75LsiqWFIJo/s16000/Primeira%20Igreja%20Batista%20em%20Brejetuba%20cp.png" 
                      alt="Logo PIB Brejetuba" 
-                     class="w-full h-full object-contain">
+                     class="max-w-[280px] h-auto object-contain drop-shadow-sm">
             </div>
 
             <!-- Tema do Ano -->
@@ -103,7 +103,7 @@
         <nav class="flex flex-col gap-3 w-full animate-fade-in delay-200">
             
             <!-- Grupo 1: Acesso e Localização -->
-            <a href="https://batistaembrejetuba.com.br/maps" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+            <a href="https://maps.app.goo.gl/yJfFtzD4CsGLzR6v5" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
                 <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-location-dot text-lg"></i>
                 </div>
@@ -142,14 +142,6 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <a href="https://batistaembrejetuba.com.br/agenda" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
-                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 mr-4 group-hover:bg-slate-600 group-hover:text-white transition-colors">
-                    <i class="fa-regular fa-clock text-lg"></i>
-                </div>
-                <span class="font-semibold flex-grow">Agende horário com pastor</span>
-                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
-            </a>
-
             <!-- Grupo 4: Membresia e Planejamento -->
             <a href="https://batistaembrejetuba.com.br/formulário" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
                 <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
@@ -167,23 +159,29 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- Fotos (Link Vazio/Placeholder) -->
-            <a href="#" onclick="return false;" class="btn-link bg-white text-slate-400 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group cursor-default opacity-80">
-                <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 mr-4">
+            <!-- Fotos -->
+            <a href="https://photos.app.goo.gl/5jEBsv6son9AnH669" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+                <div class="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center text-rose-600 mr-4 group-hover:bg-rose-600 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-images text-lg"></i>
                 </div>
-                <span class="font-semibold flex-grow">Fotos e vídeos (Em breve)</span>
+                <span class="font-semibold flex-grow">Fotos e vídeos</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
         </nav>
 
         <!-- Rodapé -->
         <footer class="mt-12 text-center animate-fade-in delay-300">
-            <div class="flex justify-center gap-4 mb-4">
-                <!-- Espaço para redes sociais extras se precisar -->
-                <a href="#" class="text-slate-400 hover:text-church-primary transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
-                <a href="#" class="text-slate-400 hover:text-church-primary transition-colors"><i class="fa-brands fa-facebook text-2xl"></i></a>
-                <a href="#" class="text-slate-400 hover:text-church-primary transition-colors"><i class="fa-brands fa-youtube text-2xl"></i></a>
+            <div class="flex justify-center gap-6 mb-4">
+                <a href="https://www.instagram.com/batista.brejetuba/" target="_blank" class="text-slate-400 hover:text-pink-600 transition-colors transform hover:scale-110">
+                    <i class="fa-brands fa-instagram text-3xl"></i>
+                </a>
+                <a href="https://www.facebook.com/pibbrejetuba" target="_blank" class="text-slate-400 hover:text-blue-700 transition-colors transform hover:scale-110">
+                    <i class="fa-brands fa-facebook text-3xl"></i>
+                </a>
+                <a href="https://www.youtube.com/@pr.marciosouza" target="_blank" class="text-slate-400 hover:text-red-600 transition-colors transform hover:scale-110">
+                    <i class="fa-brands fa-youtube text-3xl"></i>
+                </a>
             </div>
             
             <div class="text-xs text-slate-500 font-medium leading-relaxed border-t border-slate-200 pt-4">
