@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - PIB Brejetuba</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        church: {
+                            primary: '#1e3a8a',
+                            secondary: '#1d4ed8',
+                            light: '#eff6ff',
+                            accent: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+        }
+        .glass-card {
+            background: white;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        /* Efeito de linha do tempo vertical */
+        .timeline-line {
+            position: absolute;
+            left: 1.5rem;
+            top: 3rem;
+            bottom: 0;
+            width: 2px;
+            background-color: #e2e8f0;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 pb-12">
+
+    <!-- Topo / Cabeçalho -->
+    <header class="bg-church-primary text-white pt-8 pb-12 px-6 rounded-b-[2.5rem] shadow-lg relative overflow-hidden">
+        <!-- Elementos decorativos de fundo -->
+        <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-32 h-32 bg-church-accent opacity-20 rounded-full blur-xl"></div>
+
+        <div class="relative max-w-md mx-auto z-10">
+            <!-- Botão Voltar (simbólico) -->
+            <a href="#" onclick="window.history.back(); return false;" class="inline-flex items-center text-blue-100 hover:text-white mb-6 transition-colors text-sm font-medium">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
+            </a>
+            
+            <h1 class="text-3xl font-bold mb-1">Agenda</h1>
+            <p class="text-blue-200 font-light">Próximas atividades da semana</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-md mx-auto px-4 -mt-6 relative z-20 space-y-6">
+
+        <!-- CARD SÁBADO -->
+        <article class="glass-card rounded-2xl p-0 overflow-hidden animate-fade-in">
+            <!-- Cabeçalho do Dia -->
+            <div class="bg-church-light border-b border-blue-100 p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white text-church-primary font-bold rounded-lg w-12 h-12 flex flex-col items-center justify-center border border-blue-100 shadow-sm">
+                        <span class="text-xs uppercase">Nov</span>
+                        <span class="text-lg leading-none">22</span>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-slate-800">Sábado</h2>
+                        <span class="text-xs text-slate-500 font-medium uppercase tracking-wider">Culto nos Lares</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalhes do Evento -->
+            <div class="p-5">
+                <h3 class="text-lg font-bold text-church-primary mb-2">Culto na residência do Irmão Darci e Alice</h3>
+                
+                <div class="flex items-start gap-3 text-sm text-slate-600 mb-2">
+                    <i class="fa-regular fa-clock mt-1 text-church-accent"></i>
+                    <span>Horário: <strong>18h30</strong></span>
+                </div>
+                
+                <div class="flex items-start gap-3 text-sm text-slate-600 mb-4">
+                    <i class="fa-solid fa-location-dot mt-1 text-church-accent"></i>
+                    <span>Local: Residência do Irmão Darci e Alice</span>
+                </div>
+
+                <!-- Alerta / Aviso -->
+                <div class="bg-amber-50 border border-amber-100 rounded-lg p-3 flex gap-3">
+                    <i class="fa-solid fa-car text-amber-500 mt-1"></i>
+                    <div class="text-xs text-slate-600 leading-relaxed">
+                        <strong class="text-amber-800 block mb-1">Carona Solidária</strong>
+                        Se você vai de carro ofereça carona, se precisa de carona, avise! É um momento muito importante, não deixe de participar.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- CARD DOMINGO -->
+        <article class="glass-card rounded-2xl p-0 overflow-hidden animate-fade-in" style="animation-delay: 0.1s;">
+            <!-- Cabeçalho do Dia -->
+            <div class="bg-church-light border-b border-blue-100 p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white text-church-primary font-bold rounded-lg w-12 h-12 flex flex-col items-center justify-center border border-blue-100 shadow-sm">
+                        <span class="text-xs uppercase">Nov</span>
+                        <span class="text-lg leading-none">23</span>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-slate-800">Domingo</h2>
+                        <span class="text-xs text-slate-500 font-medium uppercase tracking-wider">Dia do Senhor</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Horários do Domingo (Timeline Interna) -->
+            <div class="p-5 relative">
+                <!-- Linha vertical de conexão -->
+                <div class="timeline-line"></div>
+
+                <!-- 08h: Café -->
+                <div class="relative pl-10 mb-6">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-church-primary text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm z-10 ring-4 ring-white">
+                        08h
+                    </div>
+                    <h3 class="font-bold text-slate-800">Café da Manhã de Comunhão</h3>
+                    <p class="text-xs text-slate-500 mt-1 italic bg-slate-50 p-2 rounded border border-slate-100 inline-block">
+                        <i class="fa-solid fa-circle-info mr-1 text-church-primary"></i>
+                        Se puder levar algo para contribuir, informe a irmã Josiana.
+                    </p>
+                </div>
+
+                <!-- 08h30: EBD -->
+                <div class="relative pl-10 mb-6">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-white border-2 border-church-primary text-church-primary rounded-full flex items-center justify-center text-[10px] font-bold shadow-sm z-10 ring-4 ring-white">
+                        08:30
+                    </div>
+                    <h3 class="font-bold text-slate-800">Escola Bíblica Dominical</h3>
+                    <div class="mt-2">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-medium mb-1">Lição 3</span>
+                        <p class="text-sm text-slate-600">O distanciamento de Deus e suas consequências</p>
+                    </div>
+                </div>
+
+                <!-- 19h: Culto -->
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-church-primary text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm z-10 ring-4 ring-white">
+                        19h
+                    </div>
+                    <h3 class="font-bold text-slate-800">Culto de Celebração</h3>
+                    <p class="text-sm text-slate-600 mt-1">Venha adorar a Deus conosco!</p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Rodapé Simples -->
+    <footer class="text-center mt-10 text-xs text-slate-400 px-4">
+        <p>PIB Brejetuba • 2025</p>
+        <p class="mt-1">Fique atento às atualizações nos grupos oficiais.</p>
+    </footer>
+
+    <style>
+        /* Animação simples de fade-in */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+</body>
+</html>
