@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos de Oração - PIB Brejetuba</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        church: {
+                            primary: '#1e3a8a',
+                            secondary: '#1d4ed8',
+                            accent: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0fdfa; /* Teal muito claro */
+            background-image: radial-gradient(#ccfbf1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .form-input {
+            transition: all 0.2s;
+        }
+        
+        .form-input:focus {
+            border-color: #0d9488; /* Teal-600 */
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+            outline: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 pb-12">
+    
+    <!-- Cabeçalho -->
+    <header class="bg-teal-700 text-white pt-8 pb-16 px-6 rounded-b-[2.5rem] shadow-lg relative mb-8">
+        <!-- Decoração -->
+        <div class="absolute top-0 right-0 opacity-10 text-8xl -mr-6 -mt-6 text-white rotate-12">
+            <i class="fa-solid fa-hands-praying"></i>
+        </div>
+
+        <div class="relative max-w-md mx-auto z-10">
+            <a href="index.html" class="inline-flex items-center text-teal-100 hover:text-white mb-6 text-sm font-medium transition-colors">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
+            </a>
+            
+            <h1 class="text-3xl font-bold mb-1">Oração</h1>
+            <p class="text-teal-100 font-light text-sm">"Orai uns pelos outros para serdes curados"</p>
+            <p class="text-xs text-teal-200 mt-1 font-medium">Tiago 5:16</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-md mx-auto px-4 -mt-12 relative z-20 space-y-6">
+        
+        <!-- Formulário -->
+        <section class="glass-card rounded-2xl p-6 animate-fade-in">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center shadow-sm">
+                    <i class="fa-solid fa-pen-fancy"></i>
+                </div>
+                <h2 class="font-bold text-slate-800">Deixe seu pedido</h2>
+            </div>
+
+            <form onsubmit="handlePrayer(event)" class="space-y-5">
+                
+                <!-- Nome -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1 ml-1">Seu Nome (Opcional)</label>
+                    <input type="text" name="nome" 
+                           class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 form-input" 
+                           placeholder="Ex: Maria Silva">
+                </div>
+
+                <!-- Motivo -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1 ml-1">Motivo da Oração</label>
+                    <textarea name="motivo" required rows="4" 
+                              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 form-input" 
+                              placeholder="Descreva seu pedido aqui... Pela saúde, família, causa urgente..."></textarea>
+                </div>
+
+                <!-- Privacidade -->
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-3">Quem pode ver este pedido?</label>
+                    
+                    <div class="space-y-3">
+                        <label class="flex items-start gap-3 cursor-pointer group">
+                            <div class="relative flex items-center mt-0.5">
+                                <input type="radio" name="tipo" value="Público" class="peer h-4 w-4 text-teal-600 focus:ring-teal-600 border-gray-300" checked>
+                            </div>
+                            <div>
+                                <span class="text-sm font-bold text-slate-700 group-hover:text-teal-700">Público</span>
+                                <p class="text-xs text-slate-500">Para ser compartilhado com o grupo de intercessão da igreja.</p>
+                            </div>
+                        </label>
+
+                        <div class="border-t border-slate-200"></div>
+
+                        <label class="flex items-start gap-3 cursor-pointer group pt-1">
+                            <div class="relative flex items-center mt-0.5">
+                                <input type="radio" name="tipo" value="Pastoral (Sigiloso)" class="peer h-4 w-4 text-teal-600 focus:ring-teal-600 border-gray-300">
+                            </div>
+                            <div>
+                                <span class="text-sm font-bold text-slate-700 group-hover:text-teal-700">Pastoral (Sigiloso)</span>
+                                <p class="text-xs text-slate-500">Apenas o Pastor Márcio terá acesso.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-teal-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-teal-700 transition-all active:scale-95 flex items-center justify-center gap-2 group">
+                    <span>Enviar Pedido</span>
+                    <i class="fa-solid fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </form>
+        </section>
+
+        <!-- Mensagem de Sucesso (Oculta inicialmente) -->
+        <div id="successMsg" class="hidden text-center py-10 px-4 animate-fade-in">
+            <div class="w-24 h-24 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm animate-bounce">
+                <i class="fa-solid fa-check text-4xl text-teal-600"></i>
+            </div>
+            
+            <h3 class="font-bold text-2xl text-slate-800 mb-2">Pedido Enviado!</h3>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+                Seu pedido já foi encaminhado para o e-mail do Pastor. <br>
+                <span class="font-medium text-teal-700">Estaremos orando por você.</span>
+            </p>
+            
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 inline-block mb-8">
+                <p class="text-sm text-slate-500 italic font-script text-xl">
+                    "Tudo o que pedirdes na oração, crendo, o recebereis."
+                </p>
+                <p class="text-xs text-slate-400 font-bold mt-2 uppercase">Mateus 21:22</p>
+            </div>
+            
+            <br>
+            <a href="index.html" class="inline-flex items-center text-teal-700 font-bold hover:underline bg-teal-50 px-6 py-3 rounded-full">
+                <i class="fa-solid fa-house mr-2"></i> Voltar ao início
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        function handlePrayer(e) {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.target));
+            
+            // Cria o assunto e corpo do e-mail
+            const subject = encodeURIComponent(`Pedido de Oração - ${data.nome || 'Anônimo'}`);
+            const body = encodeURIComponent(
+`PEDIDO DE ORAÇÃO - SITE DA IGREJA
+
+------------------------------------------
+👤 Nome: ${data.nome || 'Anônimo'}
+🔒 Privacidade: ${data.tipo}
+------------------------------------------
+
+MOTIVO:
+${data.motivo}
+
+------------------------------------------
+Enviado através do Site da PIB Brejetuba`
+            );
+            
+            // Tenta abrir o app de e-mail do usuário
+            window.location.href = `mailto:marciodessouza@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Feedback visual na tela
+            e.target.closest('section').classList.add('hidden');
+            document.getElementById('successMsg').classList.remove('hidden');
+            
+            // Rola para o topo para garantir que a mensagem de sucesso seja vista
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
