@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisos - PIB Brejetuba</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        church: {
+                            primary: '#1e3a8a',
+                            secondary: '#1d4ed8',
+                            accent: '#f59e0b',
+                            light: '#eff6ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .glass-card {
+            background: white;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s;
+        }
+
+        .glass-card:active {
+            transform: scale(0.99);
+        }
+
+        /* Tag de "Novo" ou "Importante" piscando */
+        @keyframes pulse-badge {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .badge-pulse {
+            animation: pulse-badge 2s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 pb-12">
+
+    <!-- Cabeçalho -->
+    <header class="bg-church-primary text-white pt-8 pb-12 px-6 rounded-b-[2.5rem] shadow-lg relative overflow-hidden mb-6">
+        <!-- Elementos decorativos -->
+        <div class="absolute top-0 left-0 -ml-10 -mt-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-0 right-0 -mr-10 -mb-10 w-32 h-32 bg-church-accent opacity-20 rounded-full blur-xl"></div>
+
+        <div class="relative max-w-md mx-auto z-10">
+            <a href="#" onclick="window.history.back(); return false;" class="inline-flex items-center text-blue-100 hover:text-white mb-6 transition-colors text-sm font-medium">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
+            </a>
+            
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center shadow-lg text-white">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </div>
+                <h1 class="text-3xl font-bold">Comunicados</h1>
+            </div>
+            <p class="text-blue-200 font-light pl-1">Fique por dentro do que acontece na igreja</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-md mx-auto px-4 space-y-5 relative z-20">
+
+        <!-- AVISO 1: Ministério de Louvor -->
+        <article class="glass-card rounded-xl p-5 border-l-4 border-l-purple-500 animate-fade-in">
+            <div class="flex items-start gap-4">
+                <div class="bg-purple-50 text-purple-600 rounded-full p-3 w-12 h-12 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-music text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-1">Ministério de Louvor</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Reunião obrigatória para todos os integrantes.
+                    </p>
+                    <div class="mt-3 bg-purple-50 rounded-lg p-3 text-sm text-purple-800 font-medium flex items-center gap-2">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>29/11 (Sexta) às 14h</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- AVISO 2: Agenda 2026 -->
+        <article class="glass-card rounded-xl p-5 border-l-4 border-l-blue-500 animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="flex justify-between items-start mb-2">
+                <div class="flex items-center gap-3">
+                    <div class="bg-blue-50 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-lg">Agenda 2026</h3>
+                </div>
+                <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-full uppercase badge-pulse">Aberta</span>
+            </div>
+            
+            <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                A prévia da agenda do próximo ano já está disponível. Deseja agendar aniversários, casamentos ou cultos no lar?
+            </p>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-lg p-3">
+                <p class="text-xs text-blue-800">
+                    <i class="fa-solid fa-circle-exclamation mr-1"></i>
+                    Fale com o <strong>Pr. Márcio</strong> até o dia <strong>20/12</strong> para fecharmos a programação oficial.
+                </p>
+            </div>
+        </article>
+
+        <!-- AVISO 3: Café da Manhã -->
+        <article class="glass-card rounded-xl p-5 border-l-4 border-l-orange-400 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="flex items-start gap-4">
+                <div class="bg-orange-50 text-orange-500 rounded-full p-3 w-12 h-12 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-mug-hot text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-1">Café da Manhã</h3>
+                    <p class="text-xs text-orange-600 font-bold uppercase mb-2 tracking-wide">Todo Domingo às 08h</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                        Momentos preciosos do tema "Fortalecendo a Comunhão".
+                    </p>
+                    <div class="text-sm text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        Quer colaborar levando algo? <br>
+                        <a href="#" class="text-church-secondary font-bold hover:underline">Procure a irmã Josiana (Josi)</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- AVISO 4: Revistas EBD -->
+        <article class="glass-card rounded-xl p-5 border-l-4 border-l-red-500 animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="flex items-start gap-4">
+                <div class="bg-red-50 text-red-500 rounded-full p-3 w-12 h-12 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-book-open text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-1">Revistas da EBD</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                        Algumas irmãs ainda não retiraram o material. A entrega é feita exclusivamente aos domingos.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-bold text-red-600 bg-red-50 px-3 py-2 rounded-full inline-flex">
+                        <i class="fa-solid fa-clock"></i>
+                        Domingos às 08h30
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="text-center mt-10 text-xs text-slate-400 px-4 pb-4">
+        <p>PIB Brejetuba • 2025</p>
+    </footer>
+
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0; /* Começa invisível */
+        }
+    </style>
+</body>
+</html>
