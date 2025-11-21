@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - PIB Brejetuba</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        church: {
+                            primary: '#1e3a8a',
+                            secondary: '#1d4ed8',
+                            accent: '#f59e0b',
+                            light: '#eff6ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Efeito de Vidro */
+        .glass-header {
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Cartão do Álbum - Estilo Base */
+        .album-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: visible;
+        }
+
+        /* Efeito de "pilha de fotos" atrás do cartão */
+        .album-card::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: -4px;
+            bottom: -4px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 1rem;
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+
+        .album-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .album-card:hover::before {
+            transform: translate(4px, 4px);
+        }
+
+        /* Gradientes Especiais para os Aniversários */
+        .bg-anniversary-15 { background: linear-gradient(135deg, #fff 0%, #fff1f2 100%); border-left: 4px solid #ec4899; }
+        .bg-anniversary-16 { background: linear-gradient(135deg, #fff 0%, #f0f9ff 100%); border-left: 4px solid #0ea5e9; }
+        .bg-anniversary-17 { background: linear-gradient(135deg, #fff 0%, #fffbeb 100%); border-left: 4px solid #f59e0b; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 pb-12">
+
+    <!-- Cabeçalho -->
+    <header class="glass-header text-white pt-8 pb-16 px-6 rounded-b-[3rem] shadow-xl relative overflow-hidden mb-8">
+        <!-- Fundo abstrato -->
+        <div class="absolute top-0 right-0 opacity-10 text-9xl -mr-10 -mt-10 text-white rotate-12">
+            <i class="fa-solid fa-camera-retro"></i>
+        </div>
+
+        <div class="relative max-w-md mx-auto z-10">
+            <a href="index.html" class="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors text-sm font-medium">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
+            </a>
+            
+            <h1 class="text-3xl font-bold mb-2">Nossa Galeria</h1>
+            <p class="text-blue-200 font-light">Memórias da nossa caminhada de fé</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-md mx-auto px-4 -mt-12 relative z-20 space-y-8">
+
+        <!-- SEÇÃO 1: CELEBRAÇÕES (DESTAQUE) -->
+        <section>
+            <div class="flex items-center gap-3 mb-4 pl-2 animate-fade-in">
+                <div class="w-8 h-8 rounded-full bg-church-accent text-white flex items-center justify-center shadow-md">
+                    <i class="fa-solid fa-cake-candles text-sm"></i>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800">Aniversários da Igreja</h2>
+            </div>
+
+            <div class="grid gap-4">
+                
+                <!-- 17 Anos -->
+                <a href="https://photos.app.goo.gl/AP4tn1FVbGdQPoi29" target="_blank" class="album-card bg-anniversary-17 p-4 rounded-2xl shadow-md flex items-center gap-4 animate-fade-in group" style="animation-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-slate-800 text-lg">Celebração 17 Anos</h3>
+                        <p class="text-xs text-slate-500 mt-1">Álbum Oficial • Google Photos</p>
+                    </div>
+                    <div class="text-slate-300 group-hover:text-amber-500 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 16 Anos -->
+                <a href="https://photos.app.goo.gl/AP4tn1FVbGdQPoi29" target="_blank" class="album-card bg-anniversary-16 p-4 rounded-2xl shadow-md flex items-center gap-4 animate-fade-in group" style="animation-delay: 0.15s;">
+                    <div class="w-14 h-14 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-slate-800 text-lg">Celebração 16 Anos</h3>
+                        <p class="text-xs text-slate-500 mt-1">Álbum Oficial • Google Photos</p>
+                    </div>
+                    <div class="text-slate-300 group-hover:text-sky-500 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 15 Anos -->
+                <a href="https://photos.app.goo.gl/P2MEWZo3AXyuzBFo9" target="_blank" class="album-card bg-anniversary-15 p-4 rounded-2xl shadow-md flex items-center gap-4 animate-fade-in group" style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-slate-800 text-lg">Celebração 15 Anos</h3>
+                        <p class="text-xs text-slate-500 mt-1">Álbum Oficial • Google Photos</p>
+                    </div>
+                    <div class="text-slate-300 group-hover:text-pink-500 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: OUTROS ÁLBUNS -->
+        <section>
+            <div class="flex items-center gap-3 mb-4 pl-2 mt-8 animate-fade-in" style="animation-delay: 0.25s;">
+                <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center shadow-sm">
+                    <i class="fa-solid fa-folder-open text-sm"></i>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800">Momentos da Comunidade</h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+
+                <!-- Momentos e Comunhão -->
+                <a href="https://photos.app.goo.gl/VxTmQ8L9HuJcqWkBA" target="_blank" class="album-card col-span-2 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4 animate-fade-in group hover:border-church-primary" style="animation-delay: 0.3s;">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center text-xl shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Momentos e Comunhão</h3>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-wide font-bold mt-1">Vida na Igreja</p>
+                    </div>
+                </a>
+
+                <!-- Batismos -->
+                <a href="https://photos.app.goo.gl/mmteAkkdLNZ8k4PHA" target="_blank" class="album-card bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3 animate-fade-in group hover:border-cyan-500" style="animation-delay: 0.35s;">
+                    <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center text-xl group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-sm">Batismos</h3>
+                </a>
+
+                <!-- Obras e Mutirões -->
+                <a href="https://photos.app.goo.gl/M6xr51LKYhZ5a1Fb6" target="_blank" class="album-card bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3 animate-fade-in group hover:border-orange-500" style="animation-delay: 0.4s;">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center text-xl group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-trowel-bricks"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-sm">Obras e Mutirões</h3>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="text-center pt-8 pb-4 animate-fade-in" style="animation-delay: 0.5s;">
+            <p class="font-script text-xl text-slate-400 opacity-60">Recordar é viver</p>
+        </footer>
+
+    </main>
+</body>
+</html>
