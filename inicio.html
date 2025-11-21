@@ -3,297 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniversário PIB Brejetuba</title>
-    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Inter --><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        /* Aplicando a fonte Inter como padrão */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Um leve efeito de sombra no texto do hero para melhor legibilidade */
-        .text-shadow {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        /* Container responsivo para vídeo */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            width: 100%;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-
-    <!-- 1. Seção Hero --><header class="relative h-[70vh] min-h-[400px] bg-cover bg-center" style="background-image: url('2.jpg');">
-        <!-- Overlay escuro para legibilidade --><div class="absolute inset-0 bg-black/60"></div>
-        
-        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-4">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-shadow">
-                Aniversário da Primeira Igreja Batista
-            </h1>
-            <h2 class="text-3xl sm:text-4xl font-bold text-amber-300 text-shadow mt-2">em Brejetuba</h2>
-            <p class="mt-6 text-2xl font-semibold text-shadow">Venha celebrar conosco!</p>
-            <p class="mt-2 text-xl font-medium bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                15 e 16 de Novembro
-            </p>
-        </div>
-    </header>
-
-    <!-- 2. Seção de Convite --><section class="py-16 md:py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-indigo-800 mb-6">
-                Um convite especial para você!
-            </h2>
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
-                Convidamos você e sua família para celebrar conosco este momento tão importante. Serão dias de muita gratidão, louvor e adoração a Deus.
-            </p>
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mt-4 font-semibold">
-                Teremos a alegria de receber nossos irmãos
-                <span class="text-indigo-600">Kiko e Alane</span>
-                (Igreja Batista do Calvário de Muqui-ES), que estarão ministrando a palavra e nos dirigindo em louvor.
-            </p>
-        </div>
-    </section>
-
-    <!-- 3. Seção da Programação --><section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                Nossa Programação
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Card Dia 15 --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-6">
-                        Sexta-feira, 15/11
-                    </h3>
-                    <div class="flex items-center space-x-4">
-                        <!-- Ícone de Relógio --><svg class="w-8 h-8 text-indigo-500 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div>
-                            <p class="text-xl font-semibold">19h00</p>
-                            <p class="text-lg text-gray-600">Culto de Gratidão</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card Dia 16 --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-6">
-                        Sábado, 16/11
-                    </h3>
-                    <ul class="space-y-6">
-                        <li class="flex items-center space-x-4">
-                            <!-- Ícone de Relógio --><svg class="w-8 h-8 text-indigo-500 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div>
-                                <p class="text-xl font-semibold">09h00</p>
-                                <p class="text-lg text-gray-600">Culto de Gratidão</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center space-x-4">
-                            <!-- Ícone de Almoço --><svg class="w-8 h-8 text-indigo-500 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
-                            </svg>
-                            <div>
-                                <p class="text-xl font-semibold">11h30</p>
-                                <p class="text-lg text-gray-600">Almoço Compartilhado</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center space-x-4">
-                            <!-- Ícone de Relógio --><svg class="w-8 h-8 text-indigo-500 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div>
-                                <p class="text-xl font-semibold">19h00</p>
-                                <p class="text-lg text-gray-600">Culto de Gratidão</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Seção Vídeo (Nova Posição) --><section class="py-16 md:py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                Uma Mensagem Especial
-            </h2>
-            <div class="video-container rounded-2xl shadow-lg overflow-hidden border">
-                <iframe 
-                    src="https://www.youtube.com/embed/6ote1mpLlxo?si=hnWfBJYjmGnHsDFL" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Seção de Participações --><section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                Participações
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                
-                <!-- Coluna Pregadores --><div class="bg-white p-8 rounded-2xl shadow-sm border">
-                    <h3 class="flex items-center text-2xl font-bold text-indigo-800 mb-6">
-                        <!-- Ícone Mic --><svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-                        </svg>
-                        Ministrando a Palavra
-                    </h3>
-                    <ul class="space-y-3 text-lg text-gray-700">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 shrink-0"></span>
-                            Nelson Eleutério (Kiko)
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 shrink-0"></span>
-                            Alane
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 shrink-0"></span>
-                            Pastor Marcio
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Coluna Louvor --><div class="bg-white p-8 rounded-2xl shadow-sm border">
-                    <h3 class="flex items-center text-2xl font-bold text-indigo-800 mb-6">
-                        <!-- Ícone Música --><svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
-                        </svg>
-                        Dirigindo o Louvor
-                    </h3>
-                    <ul class="space-y-3 text-lg text-gray-700">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 shrink-0"></span>
-                            Kiko e Alane
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 shrink-0"></span>
-                            Coral das Mulheres (PIB Brejetuba)
-                        </li>
-                         <li class="flex items-center">
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 shrink-0"></span>
-                            Ministério Infantil
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 shrink-0"></span>
-                            Ministério de Louvor (PIB Brejetuba)
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Seção Nossa Comunidade (Nova Posição) --><section class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                Nossa Comunidade
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-               <!-- Imagem 2 --><div class="bg-gray-100 rounded-2xl shadow-lg p-2">
-                   <img 
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSB6ZBNfLAHxlgXZ1bfUIGqkaC1D118YOApPsO3yoLprcXELHsfo9mbGIUmmFCJ87tSIXrdikV7moS1bXysrWeq_hqcDJm3_G9E-NV8HrsPOHiPVCsXQwgbzfpPrfA17rkq7HwW8o60CeXTqVpPMDZRx2az064TD4vAXvxrgO2WFW4bidNDcU4o7XrCb8/s1280/foto1.png" 
-                        alt="Nossa comunidade foto 2" 
-                        class="w-full h-auto md:h-[500px] object-contain rounded-lg"
-                        onerror="this.src='https://placehold.co/600x500/e2e8f0/64748b?text=Imagem+1'"
-                    >
-                </div>
-                <!-- Imagem 2 --><div class="bg-gray-100 rounded-2xl shadow-lg p-2">
-                    <img 
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSB6ZBNfLAHxlgXZ1bfUIGqkaC1D118YOApPsO3yoLprcXELHsfo9mbGIUmmFCJ87tSIXrdikV7moS1bXysrWeq_hqcDJm3_G9E-NV8HrsPOHiPVCsXQwgbzfpPrfA17rkq7HwW8o60CeXTqVpPMDZRx2az064TD4vAXvxrgO2WFW4bidNDcU4o7XrCb8/s1280/foto1.png" 
-                        alt="Nossa comunidade foto 1" 
-                        class="w-full h-auto md:h-[500px] object-contain rounded-lg"
-                        onerror="this.src='https://placehold.co/600x500/e2e8f0/64748b?text=Imagem+2'"
-                    >
-                </div>
-            </div>
-        </div>
-    </section>
+    <title>PIB Brejetuba - Links</title>
     
-    <!-- 7. Seção de Localização --><section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                Como Chegar
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                
-                <!-- Coluna do Endereço --><div class="text-center md:text-left">
-                    <h3 class="text-2xl font-bold text-indigo-800">
-                        Primeira Igreja Batista em Brejetuba
-                    </h3>
-                    <p class="text-lg text-gray-700 mt-4">
-                        Avenida Firmino Teixeira Griffo, 504
-                        <br>
-                        Centro - Brejetuba, ES
-                    </p>
-                </div>
-                
-                <!-- Coluna do Mapa --><div class="w-full">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.619679993777!2d-41.295971924993694!3d-20.14990828128847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xba1ff02b28355d%3A0x761e4421bc311970!2sPrimeira%20Igreja%20Batista%20em%20Brejetuba!5e0!3m2!1spt-BR!2sbr!4v1762536190271!5m2!1spt-BR!2sbr" 
-                        class="w-full h-96 border-0 rounded-2xl shadow-lg" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f3f4f6;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .btn-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        church: {
+                            primary: '#1e3a8a', /* Azul Escuro Clássico */
+                            secondary: '#1d4ed8',
+                            accent: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center py-10 px-4 text-slate-800">
+
+    <!-- Container Principal -->
+    <main class="w-full max-w-md mx-auto">
+        
+        <!-- Cabeçalho -->
+        <header class="flex flex-col items-center text-center mb-8 animate-fade-in">
+            <!-- Logo com borda branca e sombra -->
+            <div class="relative w-32 h-32 mb-4 rounded-full bg-white shadow-xl flex items-center justify-center overflow-hidden p-2">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitWVDfev2LtJMx5gW2IbVQ8Jc5ht3OIeV0M7XBd63dIpiZQdjioIScUa29fo2My-tjY59wHfkC2vs5deUQyswZtzU7bP8khxqnWQ4CeUGMmu9Z2na0qThdLcpPM9ncCxGRTy0FkGh3IfPC6jiZsTOiOPTCur8Zs3swp92FJALSgsGVTJHs75LsiqWFIJo/s16000/Primeira%20Igreja%20Batista%20em%20Brejetuba%20cp.png" 
+                     alt="Logo PIB Brejetuba" 
+                     class="w-full h-full object-contain">
             </div>
-        </div>
-    </section>
 
-    <!-- 8. Seção CTA WhatsApp --><section class="py-16 md:py-24 bg-indigo-800 text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold">
-                Dúvidas ou mais informações?
-            </h2>
-            <p class="text-lg md:text-xl text-indigo-100 mt-4">
-                Entre em contato conosco! Será um prazer falar com você.
-            </a >
-            <a 
-                href="https://wa.me/5527998738910" 
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 px-8 rounded-full shadow-lg mt-10 transition-transform duration-300 transform hover:scale-105"
-            >
-                <!-- Ícone WhatsApp --><svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.57 6.57 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                </svg>
-                Falar pelo WhatsApp
+            <!-- Tema do Ano -->
+            <div class="bg-church-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 shadow-md">
+                2025 • Fortalecendo a comunhão
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="text-2xl font-bold text-slate-900 leading-tight mb-2">
+                PIB Brejetuba
+            </h1>
+
+            <!-- Lema -->
+            <p class="text-sm text-slate-600 font-light italic px-4">
+                "Uma igreja apaixonada por Jesus, profunda em conhecimento e relevante para cidade"
+            </p>
+        </header>
+
+        <!-- Lista de Botões -->
+        <nav class="flex flex-col gap-3 w-full animate-fade-in delay-200">
+            
+            <!-- Grupo 1: Acesso e Localização -->
+            <a href="https://batistaembrejetuba.com.br/maps" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-location-dot text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Como Chegar</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
-        </div>
-    </section>
 
-    <!-- 9. Rodapé --><footer class="py-10 bg-gray-900 text-gray-400 text-center">
-        <p class="text-lg font-semibold">Primeira Igreja Batista em Brejetuba</p>
-        <p class="text-sm mt-2">© 2025 - Todos os direitos reservados.</p>
-    </footer>
+            <a href="https://batistaembrejetuba.com.br/agenda" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <i class="fa-regular fa-calendar-check text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Agenda da Semana</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
 
+            <!-- Grupo 2: Comunicação -->
+            <a href="https://batistaembrejetuba.com.br/avisos" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 mr-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-bullhorn text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Avisos e Comunicados</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <!-- Grupo 3: Pastoral (Whatsapp) -->
+            <a href="https://wa.me/5527998738910" target="_blank" class="btn-link bg-green-50 text-slate-700 p-4 rounded-xl shadow-sm border border-green-100 flex items-center group relative overflow-hidden">
+                <!-- Destaque sutil para o botão de contato -->
+                <div class="absolute left-0 top-0 h-full w-1 bg-green-500"></div>
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 mr-4 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </div>
+                <div class="flex flex-col flex-grow">
+                    <span class="font-bold text-slate-800">Fale com o Pastor</span>
+                    <span class="text-xs text-slate-500">WhatsApp Direct</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <a href="https://batistaembrejetuba.com.br/agenda" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 mr-4 group-hover:bg-slate-600 group-hover:text-white transition-colors">
+                    <i class="fa-regular fa-clock text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Agende horário com pastor</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <!-- Grupo 4: Membresia e Planejamento -->
+            <a href="https://batistaembrejetuba.com.br/formulário" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-heart text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Quero ser membro</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <a href="https://batistaembrejetuba.com.br/calendário" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                    <i class="fa-regular fa-calendar-days text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Calendário 2026</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <!-- Fotos (Link Vazio/Placeholder) -->
+            <a href="#" onclick="return false;" class="btn-link bg-white text-slate-400 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group cursor-default opacity-80">
+                <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 mr-4">
+                    <i class="fa-solid fa-images text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Fotos e vídeos (Em breve)</span>
+            </a>
+
+        </nav>
+
+        <!-- Rodapé -->
+        <footer class="mt-12 text-center animate-fade-in delay-300">
+            <div class="flex justify-center gap-4 mb-4">
+                <!-- Espaço para redes sociais extras se precisar -->
+                <a href="#" class="text-slate-400 hover:text-church-primary transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-church-primary transition-colors"><i class="fa-brands fa-facebook text-2xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-church-primary transition-colors"><i class="fa-brands fa-youtube text-2xl"></i></a>
+            </div>
+            
+            <div class="text-xs text-slate-500 font-medium leading-relaxed border-t border-slate-200 pt-4">
+                <p><i class="fa-solid fa-map-pin mr-1 text-church-primary"></i> Avenida Firmino Teixeira Griffo, 504</p>
+                <p>Centro - Brejetuba-ES</p>
+                <p class="mt-2 opacity-50">© 2025 PIB Brejetuba</p>
+            </div>
+        </footer>
+
+    </main>
 </body>
 </html>
-
-
-
-
-
