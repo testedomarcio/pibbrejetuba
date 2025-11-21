@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversariantes - PIB Brejetuba</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        church: {
+                            primary: '#1e3a8a',
+                            secondary: '#1d4ed8',
+                            accent: '#f59e0b',
+                            light: '#eff6ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            /* Padrão sutil de confete no fundo */
+            background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px), radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Animação suave de entrada */
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.5s ease-out both;
+        }
+
+        /* Brilho para o aniversariante do dia */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.2), 0 0 15px rgba(245, 158, 11, 0.1); }
+            50% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.4), 0 0 20px rgba(245, 158, 11, 0.2); }
+        }
+        .birthday-today {
+            animation: glow 2s infinite;
+            border-color: #fcd34d !important; /* Amber-300 */
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 pb-12">
+
+    <!-- Cabeçalho Festivo -->
+    <header class="bg-gradient-to-b from-church-primary to-blue-900 text-white pt-8 pb-16 px-6 rounded-b-[3rem] shadow-xl relative overflow-hidden mb-8">
+        <!-- Decoração de fundo -->
+        <div class="absolute top-0 right-0 opacity-10 text-9xl rotate-12 -mr-10 -mt-4 pointer-events-none">
+            <i class="fa-solid fa-cake-candles"></i>
+        </div>
+        
+        <div class="relative max-w-md mx-auto z-10">
+            <a href="index.html" class="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors text-sm font-medium">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
+            </a>
+            
+            <h1 class="text-3xl font-bold mb-2 font-sans">Aniversariantes</h1>
+            <div class="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30">
+                <span class="text-sm font-medium text-white uppercase tracking-wider">🎉 Novembro</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-md mx-auto px-4 -mt-12 relative z-20 space-y-6">
+
+        <!-- Mensagem de Abertura -->
+        <section class="glass-card rounded-2xl p-6 text-center animate-slide-in">
+            <p class="text-slate-600 text-sm leading-relaxed">
+                Este mês é especial! Como igreja, queremos celebrar, agradecer a Deus e orar para que o Senhor continue conduzindo seus passos com graça e favor.
+            </p>
+        </section>
+
+        <!-- Lista de Aniversariantes -->
+        <!-- NOTA: Adicione data-date="DD/MM" para a automação funcionar -->
+        <section class="space-y-3" id="birthdayList">
+
+            <!-- 10/11 -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="10/11" style="animation-delay: 0.1s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
+                    <span class="text-xl leading-none">10</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Rafael Almeida Gaspar</h3>
+                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
+                </div>
+            </div>
+
+            <!-- 12/11 -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="12/11" style="animation-delay: 0.15s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
+                    <span class="text-xl leading-none">12</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Willamis Junio Farias de França</h3>
+                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
+                </div>
+            </div>
+
+            <!-- 17/11 -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="17/11" style="animation-delay: 0.2s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
+                    <span class="text-xl leading-none">17</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Edinilda Badaró</h3>
+                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
+                </div>
+            </div>
+
+            <!-- 21/11 -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="21/11" style="animation-delay: 0.25s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
+                    <span class="text-xl leading-none">21</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Millena Perilio Viana Lourenço</h3>
+                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
+                </div>
+            </div>
+
+            <!-- 28/11 -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="28/11" style="animation-delay: 0.3s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
+                    <span class="text-xl leading-none">28</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Ivanete Viana Pereira Siqueira</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
+                </div>
+            </div>
+
+            <!-- 28/11 -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="28/11" style="animation-delay: 0.35s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
+                    <span class="text-xl leading-none">28</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Jullya Gabrielly Dias Oliveira</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Mensagem Final -->
+        <footer class="text-center pt-6 pb-4 animate-slide-in" style="animation-delay: 0.4s;">
+            <div class="w-12 h-1 bg-church-accent/30 mx-auto rounded-full mb-4"></div>
+            <p class="font-script text-2xl text-church-primary mb-2">Parabéns!</p>
+            <p class="text-xs text-slate-500 px-4 leading-relaxed">
+                Que cada um de vocês seja renovado em alegria, esperança e propósito. <br>
+                <strong class="text-church-primary">A igreja celebra a vida de vocês! 🎂💛</strong>
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Script para destacar aniversariante do dia automaticamente -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Pega a data de hoje
+            const today = new Date();
+            const day = String(today.getDate()).padStart(2, '0');
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
+            const todayString = `${day}/${month}`;
+
+            // 2. Procura nos cartões alguém com essa data
+            const cards = document.querySelectorAll('.birthday-card');
+            
+            cards.forEach(card => {
+                if (card.getAttribute('data-date') === todayString) {
+                    highlightCard(card);
+                }
+            });
+
+            function highlightCard(card) {
+                // Remove estilos padrão simples
+                card.classList.remove('bg-white', 'border-slate-100', 'shadow-sm');
+                
+                // Adiciona estilos de destaque (Dourado/Amber)
+                card.classList.add(
+                    'bg-gradient-to-r', 'from-amber-50', 'to-white', 
+                    'shadow-md', 'border-2', 'birthday-today', 
+                    'relative', 'overflow-hidden'
+                );
+
+                // Adiciona o selo "É HOJE!"
+                const badge = document.createElement('div');
+                badge.className = 'absolute right-0 top-0 bg-church-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-bl-lg z-10';
+                badge.textContent = 'É HOJE!';
+                card.appendChild(badge);
+
+                // Atualiza cores do ícone de data
+                const dateBox = card.querySelector('.date-box');
+                dateBox.classList.remove('bg-blue-50', 'text-church-primary', 'border-blue-100');
+                dateBox.classList.add('bg-white', 'text-church-accent', 'border-amber-200', 'shadow-sm', 'z-10');
+                
+                const dateMonth = card.querySelector('.date-month');
+                dateMonth.classList.remove('text-blue-400');
+                dateMonth.classList.add('text-amber-400');
+
+                // Atualiza nome e mensagem
+                const nameText = card.querySelector('.name-text');
+                nameText.classList.add('font-bold', 'z-10', 'relative');
+                nameText.classList.remove('font-semibold');
+
+                const statusText = card.querySelector('.status-text');
+                statusText.innerHTML = '<i class="fa-solid fa-cake-candles"></i> Feliz Aniversário!';
+                statusText.className = 'text-xs text-church-accent font-medium flex items-center gap-1 mt-1 z-10 relative';
+            }
+        });
+    </script>
+</body>
+</html>
