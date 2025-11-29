@@ -3,64 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+    <title>PIB Brejetuba - Linktree</title>
     
-    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome para ícones -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f3f4f6;
-            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .btn-link {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .glass-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-
-        /* Animação de entrada */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-            opacity: 0;
-        }
-
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive'],
+                    },
                     colors: {
                         church: {
-                            primary: '#1e3a8a', /* Azul Escuro Clássico */
+                            primary: '#1e3a8a',
                             secondary: '#1d4ed8',
                             accent: '#f59e0b',
                         }
@@ -69,61 +33,84 @@
             }
         }
     </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .btn-link {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-link:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center py-10 px-4 text-slate-800">
+<body class="min-h-screen text-slate-800 pb-12">
 
-    <!-- Container Principal -->
-    <main class="w-full max-w-md mx-auto">
-        
-        <!-- Cabeçalho -->
-        <header class="flex flex-col items-center text-center mb-8 animate-fade-in">
-            <!-- Logo Livre (Sem círculo) -->
-            <div class="w-full flex justify-center mb-6 px-4">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitWVDfev2LtJMx5gW2IbVQ8Jc5ht3OIeV0M7XBd63dIpiZQdjioIScUa29fo2My-tjY59wHfkC2vs5deUQyswZtzU7bP8khxqnWQ4CeUGMmu9Z2na0qThdLcpPM9ncCxGRTy0FkGh3IfPC6jiZsTOiOPTCur8Zs3swp92FJALSgsGVTJHs75LsiqWFIJo/s16000/Primeira%20Igreja%20Batista%20em%20Brejetuba%20cp.png" 
-                     alt="Logo PIB Brejetuba" 
-                     class="max-w-[280px] h-auto object-contain drop-shadow-sm">
-            </div>
+    <div class="max-w-md mx-auto px-4 pt-8">
 
+        <!-- Logo e Títulos -->
+        <header class="text-center mb-6 animate-fade-in">
+            <!-- Logo (Formato Paisagem) - URL CORRIGIDA -->
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitWVDfev2LtJMx5gW2IbVQ8Jc5ht3OIeV0M7XBd63dIpiZQdjioIScUa29fo2My-tjY59wHfkC2vs5deUQyswZtzU7bP8khxqnWQ4CeUGMmu9Z2na0qThdLcpPM9ncCxGRTy0FkGh3IfPC6jiZsTOiOPTCur8Zs3swp92FJALSgsGVTJHs75LsiqWFIJo/s16000/Primeira%20Igreja%20Batista%20em%20Brejetuba%20cp.png" 
+                 alt="Primeira Igreja Batista em Brejetuba Logo" 
+                 class="h-auto max-w-full mx-auto mb-4 object-contain max-h-24">
+            
             <!-- Tema do Ano -->
-            <div class="bg-church-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 shadow-md">
-                2025 • Fortalecendo a comunhão
+            <div class="inline-block bg-church-primary text-white text-xs font-bold px-3 py-1 rounded-full mb-2 shadow-md">
+                2025 - Fortalecendo a Comunhão
             </div>
-
-            <!-- Título Principal -->
-            <h1 class="text-2xl font-bold text-slate-900 leading-tight mb-2">
-                PIB Brejetuba
-            </h1>
 
             <!-- Lema -->
-            <p class="text-sm text-slate-600 font-light italic px-4">
-                "Uma igreja apaixonada por Jesus, profunda em conhecimento e relevante para cidade"
+            <p class="text-sm text-slate-600 italic px-2">
+                Uma igreja apaixonada por Jesus, profunda em conhecimento e relevante para cidade
             </p>
         </header>
 
-        <!-- Lista de Botões -->
-        <nav class="flex flex-col gap-3 w-full animate-fade-in delay-200">
-            
-            <!-- Grupo 1: Acesso e Localização -->
-            <a href="https://maps.app.goo.gl/yJfFtzD4CsGLzR6v5" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
-                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
-                    <i class="fa-solid fa-location-dot text-lg"></i>
+        <!-- Navegação / Botões de Link -->
+        <nav class="space-y-4 w-full" style="animation-delay: 0.1s;">
+
+            <!-- NOVO: Edital de Convocação (DESTAQUE MÁXIMO) -->
+            <a href="https://batistabrejetuba.com.br/extraordinaria" class="btn-link bg-red-600 text-white p-4 rounded-xl shadow-lg border-2 border-red-800 flex items-center group relative overflow-hidden animate-fade-in">
+                <!-- Efeito de Urgência/Pulse -->
+                <div class="absolute inset-0 bg-red-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-red-600 mr-4 shrink-0 transition-transform group-hover:scale-110">
+                    <i class="fa-solid fa-bell text-xl"></i>
                 </div>
-                <span class="font-semibold flex-grow">Como Chegar</span>
-                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+                <div class="flex flex-col flex-grow relative z-10">
+                    <span class="font-extrabold text-xl leading-tight">EDITAL DE CONVOCAÇÃO</span>
+                    <span class="text-xs text-red-200">Assembleia Geral Extraordinária - 07/12</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-white text-sm relative z-10"></i>
             </a>
 
-            <!-- ALTERADO: Texto e Link -->
-            <a href="https://batistabrejetuba.com.br/agenda" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+            <!-- Grupo 1: Agenda e Avisos -->
+            <!-- ALTERADO: Link e Texto -->
+            <a href="https://batistabrejetuba.com.br/agenda" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.2s;">
                 <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                    <i class="fa-regular fa-calendar-check text-lg"></i>
+                    <i class="fa-regular fa-calendar-alt text-lg"></i>
                 </div>
                 <span class="font-semibold flex-grow">Agenda do Mês</span>
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- Grupo 2: Comunicação -->
             <!-- ALTERADO: Link e Texto -->
-            <a href="https://batistabrejetuba.com.br/avisos" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+            <a href="https://batistabrejetuba.com.br/avisos" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.25s;">
                 <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 mr-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-bullhorn text-lg"></i>
                 </div>
@@ -131,8 +118,8 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- NOVO: Aniversariantes do Mês -->
-            <a href="http://batistabrejetuba.com.br/aniversariantes" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+            <!-- Aniversariantes do Mês -->
+            <a href="http://batistabrejetuba.com.br/aniversariantes" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.3s;">
                 <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mr-4 group-hover:bg-orange-600 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-cake-candles text-lg"></i>
                 </div>
@@ -140,9 +127,9 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- Grupo 3: Pastoral (Whatsapp) -->
-            <a href="https://wa.me/5527998738910" target="_blank" class="btn-link bg-green-50 text-slate-700 p-4 rounded-xl shadow-sm border border-green-100 flex items-center group relative overflow-hidden">
-                <!-- Destaque sutil para o botão de contato -->
+            <!-- Grupo 2: Ação e Cuidado -->
+            <!-- Contato Pastor (WhatsApp) -->
+            <a href="https://wa.me/5527998738910" target="_blank" class="btn-link bg-green-50 text-slate-700 p-4 rounded-xl shadow-sm border border-green-100 flex items-center group relative overflow-hidden animate-fade-in" style="animation-delay: 0.35s;">
                 <div class="absolute left-0 top-0 h-full w-1 bg-green-500"></div>
                 <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 mr-4 group-hover:bg-green-600 group-hover:text-white transition-colors">
                     <i class="fa-brands fa-whatsapp text-xl"></i>
@@ -154,8 +141,8 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- NOVO: Pedidos de Oração -->
-            <a href="https://batistabrejetuba.com.br/oracao" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+            <!-- Pedidos de Oração -->
+            <a href="https://batistabrejetuba.com.br/oracao" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.4s;">
                 <div class="w-10 h-10 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center text-lg mr-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-hands-praying"></i>
                 </div>
@@ -163,27 +150,8 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- Grupo 4: Membresia e Planejamento -->
-            <!-- ALTERADO: Link -->
-            <a href="https://batistabrejetuba.com.br/formulario" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
-                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                    <i class="fa-solid fa-heart text-lg"></i>
-                </div>
-                <span class="font-semibold flex-grow">Quero ser membro</span>
-                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
-            </a>
-
-            <!-- ALTERADO: Link -->
-            <a href="https://batistabrejetuba.com.br/calendario2026" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
-                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                    <i class="fa-regular fa-calendar-days text-lg"></i>
-                </div>
-                <span class="font-semibold flex-grow">Calendário 2026</span>
-                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
-            </a>
-
-            <!-- NOVO: Contribuições -->
-            <a href="https://batistabrejetuba.com.br/oferta" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+            <!-- Dízimos e Ofertas -->
+            <a href="https://batistabrejetuba.com.br/oferta" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.45s;">
                 <div class="w-10 h-10 bg-yellow-50 text-yellow-600 rounded-full flex items-center justify-center text-lg mr-4 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                 </div>
@@ -191,9 +159,27 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- Fotos -->
-            <!-- ALTERADO: Link -->
-            <a href="https://batistabrejetuba.com.br/fotos" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group">
+            <!-- Grupo 3: Institucional e Conexão -->
+            <!-- Quero ser membro -->
+            <a href="https://batistabrejetuba.com.br/formulario" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.5s;">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-heart text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Quero ser membro</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <!-- Calendário 2026 -->
+            <a href="https://batistabrejetuba.com.br/calendario2026" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.55s;">
+                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                    <i class="fa-regular fa-calendar-days text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Calendário 2026</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <!-- Fotos e vídeos -->
+            <a href="https://batistabrejetuba.com.br/fotos" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.6s;">
                 <div class="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center text-rose-600 mr-4 group-hover:bg-rose-600 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-images text-lg"></i>
                 </div>
@@ -201,8 +187,17 @@
                 <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
             </a>
 
-            <!-- NOVO: Avaliação Google (DESTAQUE) -->
-            <a href="https://g.page/r/CXAZMbwhRB52EAE/review" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-md border border-blue-100 flex items-center group relative overflow-hidden mt-2 ring-1 ring-blue-50">
+            <!-- Como chegar -->
+            <a href="https://maps.app.goo.gl/yJfFtzD4CsGLzR6v5" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-sm border border-slate-100 flex items-center group animate-fade-in" style="animation-delay: 0.65s;">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-map-location-dot text-lg"></i>
+                </div>
+                <span class="font-semibold flex-grow">Como chegar</span>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+
+            <!-- Avaliação Google -->
+            <a href="https://g.page/r/CXAZMbwhRB52EAE/review" target="_blank" class="btn-link bg-white text-slate-700 p-4 rounded-xl shadow-md border border-blue-100 flex items-center group relative overflow-hidden mt-2 ring-1 ring-blue-50 animate-fade-in" style="animation-delay: 0.7s;">
                 <!-- Selo de Destaque no Canto -->
                 <div class="absolute right-0 top-0 bg-amber-100 text-amber-600 text-[10px] font-bold px-2 py-1 rounded-bl-lg flex items-center gap-1">
                     <i class="fa-solid fa-star text-xs"></i> Avalie
@@ -220,62 +215,49 @@
 
         </nav>
 
-        <!-- NOVO: Seção de Horários dos Cultos -->
-        <section class="mt-8 mb-2 w-full animate-fade-in delay-500">
+        <!-- Seção de Horários dos Cultos -->
+        <section class="mt-8 mb-6 w-full animate-fade-in" style="animation-delay: 0.75s;">
             <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 text-center">
-                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-clock"></i> Nossos Horários
-                </h2>
-
-                <div class="space-y-4">
-                    <!-- Domingo -->
-                    <div class="flex flex-col gap-1">
-                        <div class="flex items-center justify-center gap-2 text-church-primary font-bold">
-                            <i class="fa-solid fa-sun text-amber-400"></i> Domingo
-                        </div>
-                        <p class="text-sm text-slate-600">
-                            <span class="font-semibold">08h</span> • Escola Bíblica Dominical <br>
-                            <span class="font-semibold">19h</span> • Culto de Celebração
-                        </p>
+                <h3 class="font-bold text-lg text-church-primary mb-3 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cross text-church-accent"></i>
+                    Horários dos Cultos
+                </h3>
+                
+                <div class="space-y-2 text-sm text-slate-700">
+                    <div class="flex justify-between items-center bg-blue-50 p-2 rounded-lg">
+                        <span class="font-semibold">Domingo</span>
+                        <span>08h00 - EBD</span>
                     </div>
-
-                    <div class="border-t border-slate-100 w-1/2 mx-auto"></div>
-
-                    <!-- Quarta -->
-                    <div class="flex flex-col gap-1">
-                        <div class="flex items-center justify-center gap-2 text-church-primary font-bold">
-                            <i class="fa-solid fa-fire text-orange-400"></i> Quarta-feira
-                        </div>
-                        <p class="text-sm text-slate-600">
-                            <span class="font-semibold">19h30</span> • Culto de Oração
-                        </p>
+                    <div class="flex justify-between items-center bg-blue-50 p-2 rounded-lg">
+                        <span class="font-semibold">Domingo</span>
+                        <span>19h00 - Celebração</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-blue-50 p-2 rounded-lg">
+                        <span class="font-semibold">Quarta-feira</span>
+                        <span>19h30 - Oração</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Rodapé -->
-        <footer class="mt-8 text-center animate-fade-in delay-300">
-            <div class="flex justify-center gap-6 mb-4">
-                <a href="https://www.instagram.com/batista.brejetuba/" target="_blank" class="text-slate-400 hover:text-pink-600 transition-colors transform hover:scale-110">
-                    <i class="fa-brands fa-instagram text-3xl"></i>
+        <!-- Rodapé e Redes Sociais -->
+        <footer class="text-center pt-4 pb-4 animate-fade-in" style="animation-delay: 0.8s;">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://www.instagram.com/batista.brejetuba/" target="_blank" class="text-slate-400 hover:text-pink-600 transition-colors">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
                 </a>
-                <a href="https://www.facebook.com/pibbrejetuba" target="_blank" class="text-slate-400 hover:text-blue-700 transition-colors transform hover:scale-110">
-                    <i class="fa-brands fa-facebook text-3xl"></i>
+                <a href="https://www.youtube.com/@pr.marciosouza" target="_blank" class="text-slate-400 hover:text-red-600 transition-colors">
+                    <i class="fa-brands fa-youtube text-2xl"></i>
                 </a>
-                <a href="https://www.youtube.com/@pr.marciosouza" target="_blank" class="text-slate-400 hover:text-red-600 transition-colors transform hover:scale-110">
-                    <i class="fa-brands fa-youtube text-3xl"></i>
+                <a href="https://www.facebook.com/pibbrejetuba" target="_blank" class="text-slate-400 hover:text-blue-700 transition-colors">
+                    <i class="fa-brands fa-facebook text-2xl"></i>
                 </a>
             </div>
-            
-            <div class="text-xs text-slate-500 font-medium leading-relaxed border-t border-slate-200 pt-4">
-                <p><i class="fa-solid fa-map-pin mr-1 text-church-primary"></i> Avenida Firmino Teixeira Griffo, 504</p>
-                <p>Centro - Brejetuba-ES</p>
-                <p class="mt-2 opacity-50">© 2025 PIB Brejetuba</p>
-            </div>
+
+            <p class="text-xs text-slate-500 font-semibold mb-1">PRIMEIRA IGREJA BATISTA EM BREJETUBA</p>
+            <p class="text-xs text-slate-500">Avenida Firmino Teixeira Griffo, 504 - Centro - Brejetuba-ES</p>
         </footer>
 
-    </main>
+    </div>
 </body>
 </html>
-
