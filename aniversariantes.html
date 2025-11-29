@@ -61,7 +61,7 @@
             animation: slideIn 0.5s ease-out both;
         }
 
-        /* Brilho para o aniversariante do dia */
+        /* Brilho para o aniversariante do dia (adicionado via JS) */
         @keyframes glow {
             0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.2), 0 0 15px rgba(245, 158, 11, 0.1); }
             50% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.4), 0 0 20px rgba(245, 158, 11, 0.2); }
@@ -88,7 +88,7 @@
             
             <h1 class="text-3xl font-bold mb-2 font-sans">Aniversariantes</h1>
             <div class="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30">
-                <span class="text-sm font-medium text-white uppercase tracking-wider">🎉 Novembro</span>
+                <span class="text-sm font-medium text-white uppercase tracking-wider">🎉 Dezembro</span>
             </div>
         </div>
     </header>
@@ -99,7 +99,7 @@
         <!-- Mensagem de Abertura -->
         <section class="glass-card rounded-2xl p-6 text-center animate-slide-in">
             <p class="text-slate-600 text-sm leading-relaxed">
-                Este mês é especial! Como igreja, queremos celebrar, agradecer a Deus e orar para que o Senhor continue conduzindo seus passos com graça e favor.
+                Este mês é especial! Como igreja, queremos celebrar, agradecer a Deus e orar para que o Senhor continue conduzindo os passos de nossos irmãos com graça e favor.
             </p>
         </section>
 
@@ -107,82 +107,107 @@
         <!-- NOTA: Adicione data-date="DD/MM" para a automação funcionar -->
         <section class="space-y-3" id="birthdayList">
 
-            <!-- 10/11 -->
-            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="10/11" style="animation-delay: 0.1s;">
+            <!-- 05/12 - Lucinéia -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="05/12" style="animation-delay: 0.1s;">
                 <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
-                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
-                    <span class="text-xl leading-none">10</span>
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
+                    <span class="text-xl leading-none">05</span>
                 </div>
                 <div class="flex-1">
-                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Rafael Almeida Gaspar</h3>
-                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Lucinéia De Laia Paixão Da Silva</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
+                </div>
+            </div>
+            
+            <!-- 05/12 - Valiel -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="05/12" style="animation-delay: 0.15s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
+                    <span class="text-xl leading-none">05</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Valiel Sales Souza</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
                 </div>
             </div>
 
-            <!-- 12/11 -->
-            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="12/11" style="animation-delay: 0.15s;">
+            <!-- 08/12 - Jedson -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="08/12" style="animation-delay: 0.2s;">
                 <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
-                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
+                    <span class="text-xl leading-none">08</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Jedson Da Costa Peisino</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
+                </div>
+            </div>
+
+            <!-- 11/12 - Jadir -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="11/12" style="animation-delay: 0.25s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
+                    <span class="text-xl leading-none">11</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Jadir Luiz Da Silva</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
+                </div>
+            </div>
+
+            <!-- 12/12 - Maria -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="12/12" style="animation-delay: 0.3s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
                     <span class="text-xl leading-none">12</span>
                 </div>
                 <div class="flex-1">
-                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Willamis Junio Farias de França</h3>
-                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Maria Perilio Siqueira Floriano</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
                 </div>
             </div>
-
-            <!-- 17/11 -->
-            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="17/11" style="animation-delay: 0.2s;">
+            
+            <!-- 14/12 - Geane -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="14/12" style="animation-delay: 0.35s;">
                 <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
-                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
-                    <span class="text-xl leading-none">17</span>
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
+                    <span class="text-xl leading-none">14</span>
                 </div>
                 <div class="flex-1">
-                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Edinilda Badaró</h3>
-                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
-                </div>
-            </div>
-
-            <!-- 21/11 -->
-            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="21/11" style="animation-delay: 0.25s;">
-                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
-                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
-                    <span class="text-xl leading-none">21</span>
-                </div>
-                <div class="flex-1">
-                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Millena Perilio Viana Lourenço</h3>
-                    <span class="text-xs text-slate-400 status-text">Parabéns!</span>
-                </div>
-            </div>
-
-            <!-- 28/11 -->
-            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="28/11" style="animation-delay: 0.3s;">
-                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
-                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
-                    <span class="text-xl leading-none">28</span>
-                </div>
-                <div class="flex-1">
-                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Ivanete Viana Pereira Siqueira</h3>
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Geane Leonor de Matos</h3>
                     <span class="text-xs text-slate-400 status-text">Em breve</span>
                 </div>
             </div>
 
-            <!-- 28/11 -->
-            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="28/11" style="animation-delay: 0.35s;">
+            <!-- 19/12 - Paloma -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="19/12" style="animation-delay: 0.4s;">
                 <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
-                    <span class="text-xs uppercase text-blue-400 date-month">Nov</span>
-                    <span class="text-xl leading-none">28</span>
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
+                    <span class="text-xl leading-none">19</span>
                 </div>
                 <div class="flex-1">
-                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Jullya Gabrielly Dias Oliveira</h3>
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Paloma Silva de Souza</h3>
                     <span class="text-xs text-slate-400 status-text">Em breve</span>
                 </div>
             </div>
+            
+            <!-- 30/12 - Victor -->
+            <div class="birthday-card bg-white rounded-xl p-3 flex items-center shadow-sm border border-slate-100 animate-slide-in" data-date="30/12" style="animation-delay: 0.45s;">
+                <div class="date-box w-14 h-14 bg-blue-50 rounded-lg flex flex-col items-center justify-center text-church-primary font-bold border border-blue-100 shrink-0 mr-4 transition-colors">
+                    <span class="text-xs uppercase text-blue-400 date-month">Dez</span>
+                    <span class="text-xl leading-none">30</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-slate-700 name-text transition-colors">Victor Floriano Perilio</h3>
+                    <span class="text-xs text-slate-400 status-text">Em breve</span>
+                </div>
+            </div>
+
 
         </section>
 
         <!-- Mensagem Final -->
-        <footer class="text-center pt-6 pb-4 animate-slide-in" style="animation-delay: 0.4s;">
+        <footer class="text-center pt-6 pb-4 animate-slide-in" style="animation-delay: 0.5s;">
             <div class="w-12 h-1 bg-church-accent/30 mx-auto rounded-full mb-4"></div>
             <p class="font-script text-2xl text-church-primary mb-2">Parabéns!</p>
             <p class="text-xs text-slate-500 px-4 leading-relaxed">
@@ -206,6 +231,7 @@
             const cards = document.querySelectorAll('.birthday-card');
             
             cards.forEach(card => {
+                // A data do cartão é armazenada no atributo data-date="DD/MM"
                 if (card.getAttribute('data-date') === todayString) {
                     highlightCard(card);
                 }
