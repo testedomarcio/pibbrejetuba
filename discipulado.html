@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada de Discipulado - PIB Brejetuba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        /* Ajuste do Acordeão para esconder totalmente o conteúdo */
+        .accordion-content { 
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s ease-out, padding 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .accordion-item.active .accordion-content { 
+            grid-template-rows: 1fr;
+            padding-bottom: 1rem;
+        }
+
+        .accordion-item.active svg { transform: rotate(180deg); }
+        
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        
+        /* Animação suave para o conteúdo interno */
+        .inner-content {
+            min-height: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header / Hero -->
+    <header class="hero-gradient text-white py-12 md:py-20 px-6 text-center shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Jornada de Discipulado</h1>
+            <p class="text-lg md:text-xl opacity-90 mb-8 font-light italic">Primeira Igreja Batista em Brejetuba</p>
+            
+            <!-- Quadro de Aviso Urgente -->
+            <div class="bg-yellow-400 text-blue-900 p-5 rounded-2xl inline-block shadow-2xl border-2 border-white mb-6">
+                <p class="font-black text-xl uppercase leading-none mb-2">⚠️ ATENÇÃO AOS PRAZOS</p>
+                <div class="text-sm md:text-base font-bold space-y-1">
+                    <p>Inscrições até: <span class="bg-blue-900 text-white px-2 py-0.5 rounded">18/04</span></p>
+                    <p>Início das Aulas: <span class="bg-blue-900 text-white px-2 py-0.5 rounded">19/04</span></p>
+                </div>
+                <div class="mt-3 py-2 border-t border-blue-900/20">
+                    <p class="text-xs font-black text-red-600 uppercase tracking-tighter">Próxima turma somente em MARÇO DE 2027</p>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <a href="#inscricao" class="bg-white text-blue-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition shadow-xl inline-block active:scale-95">Quero me inscrever</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 md:px-6 py-12">
+        
+        <!-- Boas Vindas -->
+        <section class="mb-12 bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-slate-100">
+            <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Inicie sua Jornada conosco</h2>
+            <p class="text-slate-600 mb-8 text-center text-lg">
+                Este é o tempo de aprendizado e discipulado para quem deseja se tornar membro por <strong>Batismo, Transferência ou Aclamação</strong>.
+            </p>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-2xl mb-8">
+                <h4 class="font-bold text-blue-800 mb-1">Convite aos Membros 2023:</h4>
+                <p class="text-blue-700 text-sm leading-relaxed">Estendemos este convite especialmente para você que tornou-se membro a partir do ano de 2023. Venha consolidar sua caminhada em família!</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 text-center">
+                <div class="p-4 bg-slate-50 rounded-2xl">
+                    <span class="block text-2xl mb-1">☀️</span>
+                    <span class="block font-bold text-slate-700 text-sm uppercase">Domingos</span>
+                    <span class="text-blue-600 font-bold">08:00</span>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-2xl">
+                    <span class="block text-2xl mb-1">⛪</span>
+                    <span class="block font-bold text-slate-700 text-sm uppercase">No Templo</span>
+                    <span class="text-blue-600 font-bold">PIB Brejetuba</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Etapa 1: Módulos I e II -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold text-blue-900">Etapa 1: Módulos I e II</h2>
+                <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Fundamental</span>
+            </div>
+            
+            <div class="space-y-3">
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest pl-2">Módulo 1: Descubra</h3>
+                
+                <!-- Aulas Etapa 1 -->
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">19/04</span> Aula 1: O Retorno ao Lar</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Entenda o que é a verdadeira conversão a Cristo e o início da sua jornada de fé, corrigindo o percurso da vida através do Evangelho.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">03/05</span> Aula 2: O Companheiro</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Conheça a pessoa do Espírito Santo, o amigo enviado por Jesus para guiar, consolar e capacitar cada discípulo diariamente.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">17/05</span> Aula 3: Práticas de Saúde</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            A base para crescer espiritualmente: como desenvolver o hábito prazeroso da leitura da Bíblia e da vida de oração.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">31/05</span> Aula 4: Rompendo com o Passado</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Identifique o que te impede de avançar. É hora de concluir capítulos velhos para viver a plena liberdade que Cristo oferece.
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest pl-2 mt-8">Módulo 2: Identidade</h3>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">07/06</span> Aula 5: Gafanhoto a Príncipe</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Vença a mentira da crise de identidade. Descubra sua verdadeira posição como filho e príncipe do Reino de Deus.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">21/06</span> Aula 6: Marcas da Aliança</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            O significado profundo do Batismo por imersão e da Ceia do Senhor: marcas públicas do nosso compromisso com Jesus.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">28/06</span> Aula 7: Herança Batista</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Quem somos nós? Conheça a história, os princípios e a doutrina da Convenção Batista Brasileira (CBB).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">05/07</span> Aula 8: PIB Brejetuba</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Entenda o funcionamento da nossa igreja local: as assembleias, o estatuto, o regimento e como servimos juntos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">12/07</span> Aula 9: Mordomia Fiel</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-4 pb-4 text-slate-600">
+                         A visão bíblica de dízimos e ofertas: o privilégio de sustentar a obra do Reino com transparência e fidelidade.
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-700"><span class="text-blue-600 font-mono mr-3 text-sm">19/07</span> Aula 10: O Envio</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Finalização do curso: transformação de caráter e preparação para compartilhar a fé com o mundo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão Central de Inscrição -->
+            <div id="inscricao" class="mt-12 text-center p-8 bg-white border-2 border-dashed border-blue-200 rounded-3xl">
+                <p class="text-blue-900 font-bold text-lg mb-6 leading-tight">Pronto para oficializar sua caminhada conosco?</p>
+                <a href="https://forms.gle/RBuFXjaG3xMoo5qz9" target="_blank" class="bg-blue-600 text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition transform hover:scale-105 shadow-2xl inline-block active:scale-95">
+                    Matricular agora
+                </a>
+                <p class="text-xs text-slate-400 mt-6 italic">Ao concluir, você estará apto para ser recebido como membro.</p>
+            </div>
+        </section>
+
+        <!-- Etapa 2: Cresça -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold text-slate-800">Etapa 2: Cresça</h2>
+                <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Avançado</span>
+            </div>
+            
+            <p class="text-sm text-slate-500 mb-6 italic">Recomendado para quem deseja aprofundar a cura emocional e santificação. (Inscrições em 13/07)</p>
+
+            <div class="space-y-3">
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm opacity-90">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-600"><span class="text-green-600 font-mono mr-3 text-sm">16/08</span> Aula 1: Encontrando Deus</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Gere expectativa para um encontro real que muda o caráter, deixando para trás a velha identidade.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm opacity-90">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-600"><span class="text-green-600 font-mono mr-3 text-sm">23/08</span> Aula 2: O Poder do Perdão</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Liberte-se da escravidão da amargura e da culpa através do perdão recebido e liberado.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm opacity-90">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-600"><span class="text-green-600 font-mono mr-3 text-sm">13/09</span> Aula 3: Vitória na Cruz</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Entenda o triunfo de Jesus sobre o pecado e sobre as investidas do mal em sua vida diária.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm opacity-90">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-600"><span class="text-green-600 font-mono mr-3 text-sm">20/09</span> Aula 4: Curando Feridas</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Cura emocional para rejeições, humilhações e traumas do passado através do amor incondicional do Pai.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm opacity-90">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-600"><span class="text-green-600 font-mono mr-3 text-sm">27/09</span> Aula 5: Derrubando Fortalezas</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Identifique e quebre padrões de pecado e bloqueios espirituais que estagnam seu crescimento pleno.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm opacity-90">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-600"><span class="text-green-600 font-mono mr-3 text-sm">18/10</span> Aula 6: Soberania e Esperança</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Visão bíblica sobre doença, dor e a certeza da vitória final no novo corpo glorioso que receberemos de Deus.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm opacity-90">
+                    <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-5 text-left active:bg-slate-50 transition">
+                        <span class="font-bold text-slate-600"><span class="text-green-600 font-mono mr-3 text-sm">25/10</span> Aula 7: Vivendo em Vitória</span>
+                        <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <div class="inner-content text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                            Manutenção espiritual: como manter-se continuamente cheio e guiado pelo Espírito Santo de Deus.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regras -->
+        <section class="mb-16 bg-slate-900 text-white p-8 rounded-3xl shadow-xl">
+            <h2 class="text-xl font-bold mb-6 text-blue-400 border-b border-white/10 pb-2">Regras de Frequência</h2>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <span class="bg-blue-600/20 text-blue-400 w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">01</span>
+                    <p class="text-slate-300 text-sm leading-relaxed">Presença mínima de <strong>80% das aulas</strong> é obrigatória para a conclusão e membresia.</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="bg-blue-600/20 text-blue-400 w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">02</span>
+                    <p class="text-slate-300 text-sm leading-relaxed">Faltas por motivo justo devem ser repostas nas <strong>quintas-feiras às 19h30</strong>, mediante agendamento prévio.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 py-16 px-6 text-center border-t border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-slate-500 text-sm mb-6 uppercase tracking-widest font-bold underline decoration-blue-500 underline-offset-4">Contato Direto</p>
+            <div class="inline-block bg-white p-6 rounded-3xl shadow-sm border border-slate-200 mb-8">
+                <p class="text-slate-400 text-xs mb-1">Dúvidas com o Pastor Márcio:</p>
+                <a href="https://wa.me/5527998738910" class="text-blue-600 font-black text-2xl tracking-tighter">(27) 99873-8910</a>
+            </div>
+            <p class="text-slate-400 text-xs mt-4">Primeira Igreja Batista em Brejetuba © 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Fecha todos antes de abrir um novo para manter a tela limpa
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+            
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
