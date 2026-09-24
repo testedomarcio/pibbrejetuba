@@ -6,19 +6,90 @@ const artigos=(await getCollection('artigos',({data})=>!data.draft)).sort((a,b)=
 const eventos=(await getCollection('eventos',({data})=>!data.draft)).sort((a,b)=>a.data.date.valueOf()-b.data.date.valueOf());
 ---
 <Base title={site.name} description="Primeira Igreja Batista em Brejetuba - ES: cultos aos domingos (08h e 19h) e quartas (19h30). Conheça nossa igreja no Centro de Brejetuba, Espírito Santo.">
-<aside class="mission-home-banner"><div class="wrap mission-home-inner"><div><strong>Missões Nacionais 2026 · Abertura 27 de setembro, às 19h</strong><span>Para que todo o Brasil ouça — venha participar conosco em Brejetuba, ES.</span></div><a href="/missoes-nacionais-2026/">Conheça a campanha <span aria-hidden="true">↗</span></a></div></aside>
-<section class="hero"><div class="wrap"><span class="eyebrow">Primeira Igreja Batista em Brejetuba · Espírito Santo</span><h1>Primeira Igreja Batista em Brejetuba — Conhecer Jesus e Caminhar Juntos</h1><p>Na Primeira Igreja Batista em Brejetuba, ES, queremos viver um relacionamento real com Jesus: a transformação começa no coração e alcança a família, as amizades e a nossa cidade no Espírito Santo.</p><div class="actions"><a class="btn" href="/primeira-visita/">Planeje sua visita ↗</a><a class="btn btn-light" href={site.maps} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div><div class="hero-note"><span>✦ Domingo às 08h e 19h</span><span>✦ Quarta-feira às 19h30</span><span>✦ Centro de Brejetuba - ES</span></div></div></section>
+<section class="hero"><div class="wrap"><span class="eyebrow">Primeira Igreja Batista em Brejetuba · Espírito Santo</span><h1>Primeira Igreja Batista em Brejetuba — Conhecer Jesus e Caminhar Juntos</h1><p>Na Primeira Igreja Batista em Brejetuba, ES, queremos viver um relacionamento real com Jesus: a transformação começa no coração e alcança a família, as amizades e a nossa cidade no Espírito Santo.</p><div class="actions"><a class="btn" href="#jornada-visitante">Planeje sua visita ↗</a><a class="btn btn-light" href="#jornada-visitante">Horários e Como chegar ↗</a></div><div class="hero-note"><span>✦ Domingo às 08h e 19h</span><span>✦ Quarta-feira às 19h30</span><span>✦ Centro de Brejetuba - ES</span></div></div></section>
+
+<!-- Seção de Boas-vindas -->
 <section class="section"><div class="wrap split"><div><span class="eyebrow">Bem-vindo à nossa casa</span><h2>Você pode chegar como está.</h2><p>Talvez você já frequente uma igreja há anos. Talvez esteja pensando em entrar pela primeira vez. Queremos receber você, ouvir sua história e caminhar juntos na fé em Jesus.</p><p>Reunimos pessoas do Centro e da zona rural de Brejetuba para adorar, estudar a Bíblia, orar e servir. A fé cresce em relacionamentos: há lugar para sua história e suas perguntas.</p><a class="btn" href="/primeira-visita/">Saiba como é a primeira visita ↗</a></div><img src="/images/igreja-reunida.jpg" alt="Comunidade reunida para o culto na PIB Brejetuba" loading="lazy" width="685" height="913"/></div></section>
-<section class="section section-soft"><div class="wrap"><div class="section-head"><span class="eyebrow">Um lugar para sua história</span><h2>O que você está vivendo hoje?</h2><p>Não é preciso ter tudo resolvido para se aproximar de Jesus. Há espaço para dúvidas, recomeços e conversas sinceras.</p></div><div class="grid grid-3"><article class="card"><span class="num">01</span><h3>Quero conhecer Jesus</h3><p>Comece pelo evangelho e descubra o convite de Jesus para uma vida com ele.</p><a href="/artigos/jesus-o-caminho-para-deus/">Por onde começar ↗</a></article><article class="card"><span class="num">02</span><h3>Preciso de esperança</h3><p>A dor merece ser ouvida. Encontre uma reflexão e caminhos para buscar companhia e cuidado.</p><a href="/artigos/escutar-e-estar-presente-setembro-amarelo/">Leia e encontre apoio ↗</a></article><article class="card"><span class="num">03</span><h3>Quero caminhar com pessoas</h3><p>Venha conhecer uma comunidade que aprende a ouvir, orar e servir lado a lado.</p><a href="/primeira-visita/">Planeje uma visita ↗</a></article></div></div></section>
-<section class="section" id="aniversario-destaque"><div class="wrap anniversary-home"><div><span class="eyebrow">21 e 22 de novembro · Brejetuba</span><h2>18 anos. Ano da maturidade.</h2><p>Três celebrações em dois dias. Sábado às 19h com Pr. Amaury Bertoqui e Ministério Fortaleza de Adoração; domingo às 09h e 19h com a nossa comunidade.</p></div><a class="btn btn-light" href="/aniversario-18-anos/">Conheça a programação ↗</a></div></section>
-<section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">Próximos encontros</span><h2>A vida da igreja acontece em comunidade.</h2><p>Confira as celebrações e venha participar. Os eventos passados deixam de aparecer aqui automaticamente.</p></div><div class="grid grid-2" id="proximos-eventos">{eventos.map(e=><article class="card content-card" data-event-end={(e.data.endDate??e.data.date).toISOString().slice(0,10)}><span class="content-category">{e.data.category}</span><span class="event-date">{e.data.timeLabel??e.data.date.toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo'})}</span><h3><a href={`/eventos/${e.id}/`}>{e.data.title} ↗</a></h3><p>{e.data.description}</p></article>)}</div><p id="sem-eventos" hidden>Novas programações serão divulgadas em breve. Enquanto isso, <a href="/horarios-dos-cultos/">confira nossos encontros semanais</a>.</p><p class="section-more"><a href="/eventos/">Ver agenda completa ↗</a></p></div></section>
-<section class="section section-soft" id="setembro-amarelo" hidden><div class="wrap split"><div><span class="eyebrow">Setembro Amarelo</span><h2>Escutar é estar presente.</h2><p>Se a vida está pesada, você merece ser ouvido e receber cuidado. Nossa comunidade deseja caminhar perto de quem sofre, com respeito à sua história.</p><a class="btn" href="/artigos/escutar-e-estar-presente-setembro-amarelo/">Leia e encontre apoio ↗</a></div><div class="card"><h3>Precisa conversar?</h3><p>O CVV oferece apoio emocional gratuito e sigiloso pelo telefone 188. Profissionais de saúde também podem ajudar.</p><a href="https://cvv.org.br/" target="_blank" rel="noopener noreferrer">Conheça os canais do CVV ↗</a></div></div></section>
-<section class="section section-soft"><div class="wrap"><div class="section-head"><span class="eyebrow">Nossa forma de caminhar</span><h2>Uma fé que começa por dentro e aparece na vida.</h2><p>Seguimos Jesus juntos, aprendendo a ouvi-lo e a responder ao seu amor no cotidiano.</p></div><div class="grid grid-3"><div class="card"><span class="num">01</span><h3>Relacionamento com Jesus</h3><p>Antes de qualquer atividade, queremos conhecê-lo, permanecer nele e crescer na oração e na Palavra. Leia João 15:4–5.</p><a href="/no-que-cremos/">Conheça nossa fé ↗</a></div><div class="card"><span class="num">02</span><h3>Transformação de dentro para fora</h3><p>A graça de Deus renova nossos pensamentos, escolhas e atitudes. Crescer é um caminho de arrependimento, fé e obediência. Leia Romanos 12:2.</p><a href="/discipulado/">Como caminhamos ↗</a></div><div class="card"><span class="num">03</span><h3>Uma vida para servir</h3><p>Ninguém caminha sozinho. Na igreja aprendemos a amar pessoas e a levar o cuidado de Jesus para Brejetuba. Leia Marcos 10:45.</p><a href="/quem-somos/">Conheça a comunidade ↗</a></div></div></div></section>
-<section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">Encontros durante a semana</span><h2>Encontre seu lugar à mesa.</h2><p>Há momentos para aprender, celebrar e criar vínculos. Confira os horários habituais dos nossos encontros.</p></div><div class="grid grid-3">{site.schedule.map(s=><div class="card"><span class="eyebrow">{s.day}</span><span class="num">{s.time}</span><h3>{s.name}</h3><a href="/horarios-dos-cultos/">Conheça os encontros ↗</a></div>)}</div></div></section>
-<section class="section section-soft"><div class="wrap"><div class="section-head"><span class="eyebrow">Nossa caminhada</span><h2>Fé que se vive todos os dias.</h2><p>A igreja se reúne, aprende e leva o amor de Cristo para além das paredes do templo.</p></div><div class="grid grid-3"><div class="card"><span class="num">01</span><h3>Conheça a comunidade</h3><p>Saiba quem somos, o que cremos e por que estamos em Brejetuba.</p><a href="/quem-somos/">Nossa história ↗</a></div><div class="card"><span class="num">02</span><h3>Cresça na Palavra</h3><p>Estudos bíblicos, escola dominical e discipulado para cada etapa da caminhada.</p><a href="/estudos-biblicos/">Explore os estudos ↗</a></div><div class="card"><span class="num">03</span><h3>Caminhe com pessoas</h3><p>Oração, comunhão e oportunidades de servir lado a lado.</p><a href="/ministerios/">Conheça os ministérios ↗</a></div></div></div></section>
-<section class="section section-dark"><div class="wrap split"><div><span class="eyebrow" style="color:#e7b089">Para quem está chegando</span><h2>Sua primeira visita pode ser o começo de uma nova história.</h2><p>Não precisa marcar horário nem saber tudo sobre a igreja. Veja o endereço, os horários e algumas respostas para chegar com tranquilidade.</p><a class="btn btn-light" href="/primeira-visita/">Quero visitar ↗</a></div><div class="quote">“Uma igreja apaixonada por Jesus, profunda em conhecimento e relevante para a cidade.”</div></div></section>
-<section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">Conhecimento para a caminhada</span><h2>Leia, reflita e cresça.</h2><p>Conteúdos bíblicos para levar a Palavra à vida cotidiana.</p></div><div class="grid grid-2">{artigos.map(a=><article class="card content-card"><time datetime={a.data.date.toISOString()}>{a.data.date.toLocaleDateString('pt-BR',{timeZone:'UTC'})}</time><h3><a href={`/artigos/${a.id}/`}>{a.data.title} ↗</a></h3><p>{a.data.description}</p></article>)}</div><p style="margin-top:25px"><a href="/artigos/estudos-de-quarta-feira/">Conheça os Estudos de Quarta-feira ↗</a> · <a href="/artigos/">Ver todos os artigos ↗</a></p></div></section>
+
+<!-- 1. Área de Avisos logo abaixo da seção de boas-vindas -->
+<section class="section section-soft" id="area-de-avisos"><div class="wrap"><div class="section-head"><span class="eyebrow">Avisos e Destaques</span><h2>Fique por dentro das nossas programações especiais</h2><p>Acompanhe os comunicados importantes, eventos marcantes e agendas oficiais da PIB Brejetuba.</p></div>
+<div class="grid notice-grid">
+  <article class="card notice-card" id="aniversario-destaque" data-event-end="2026-11-22"><span class="eyebrow">21 e 22 de Novembro · Celebração</span><h3>18 Anos da PIB Brejetuba</h3><p>Ano da maturidade! Três celebrações em dois dias com Pr. Amaury Bertoqui e Ministério Fortaleza de Adoração.</p><a class="btn btn-small" href="/aniversario-18-anos/">Ver programação completa ↗</a></article>
+  <article class="card notice-card"><span class="eyebrow">Campanha Especial</span><h3>Missões Nacionais 2026</h3><p>Para que todo o Brasil ouça — venha participar e apoiar a mobilização missionária da nossa igreja.</p><a class="btn btn-small" href="/missoes-nacionais-2026/">Conheça a campanha ↗</a></article>
+  <article class="card notice-card"><span class="eyebrow">Planejamento da Igreja</span><h3>Calendário 2026</h3><p>Consulte os encontros habituais, datas de eventos e a programação planejada para o ano de 2026.</p><a class="btn btn-small btn-light" href="/calendario2026/">Acessar calendário ↗</a></article>
+  <article class="card notice-card"><span class="eyebrow">Comunicado Oficial</span><h3>Assembleia Extraordinária</h3><p>Edital de convocação e comunicados públicos para acompanhamento da comunidade.</p><a class="btn btn-small btn-light" href="/extraordinaria/">Ver edital ↗</a></article>
+</div></div></section>
+
+<!-- 2. Unificação da jornada do visitante -->
+<section class="section" id="jornada-visitante"><div class="wrap"><div class="section-head"><span class="eyebrow">Sua Primeira Visita</span><h2>Tudo o que você precisa para nos visitar</h2><p>Reunimos os horários dos cultos, localização e orientações para que você se sinta em casa desde o primeiro momento.</p></div>
+<div class="visitor-flow-grid">
+  <div class="visitor-step-card">
+    <span class="step-num">01 · Primeira visita</span>
+    <h3>Venha como está</h3>
+    <p>Não é preciso agendar nem vestir roupas especiais. Nossa comunidade acolhe todas as pessoas com carinho e respeito.</p>
+    <a href="/primeira-visita/" style="margin-top:auto;font-weight:750">Guia do visitante ↗</a>
+  </div>
+  <div class="visitor-step-card">
+    <span class="step-num">02 · Horários dos cultos</span>
+    <h3>Nossas reuniões</h3>
+    <p><strong>Domingo:</strong> 08h (EBD) e 19h (Culto de Celebração)<br/><strong>Quarta-feira:</strong> 19h30 (Ensino Bíblico)</p>
+    <a href="/horarios-dos-cultos/" style="margin-top:auto;font-weight:750">Ver detalhes dos cultos ↗</a>
+  </div>
+  <div class="visitor-step-card">
+    <span class="step-num">03 · Como chegar</span>
+    <h3>Endereço no Centro</h3>
+    <p>{site.address}<br/><small style="color:var(--muted)">Em frente ao Posto Pernambuco</small></p>
+    <a href={site.maps} target="_blank" rel="noopener noreferrer" style="margin-top:auto;font-weight:750">Abrir no Google Maps ↗</a>
+  </div>
+</div>
+</div></section>
+
+<!-- Próximos encontros -->
+<section class="section section-soft"><div class="wrap"><div class="section-head"><span class="eyebrow">Próximos encontros</span><h2>A vida da igreja acontece em comunidade.</h2><p>Confira as celebrações e venha participar. Os eventos passados deixam de aparecer aqui automaticamente.</p></div><div class="grid grid-2" id="proximos-eventos">{eventos.map(e=><article class="card content-card" data-event-end={(e.data.endDate??e.data.date).toISOString().slice(0,10)}><span class="content-category">{e.data.category}</span><span class="event-date">{e.data.timeLabel??e.data.date.toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo'})}</span><h3><a href={`/eventos/${e.id}/`}>{e.data.title} ↗</a></h3><p>{e.data.description}</p></article>)}</div><p id="sem-eventos" hidden>Novas programações serão divulgadas em breve. Enquanto isso, <a href="/horarios-dos-cultos/">confira nossos encontros semanais</a>.</p><p class="section-more"><a href="/eventos/">Ver agenda completa ↗</a></p></div></section>
+
+<!-- 3. Interface Conhecimento em formato de Hub/Grid -->
+<section class="section" id="hub-conhecimento"><div class="wrap"><div class="section-head"><span class="eyebrow">Central de Conhecimento</span><h2>Hub de Estudos, Devocionais e Artigos</h2><p>Recursos bíblicos preparados para fortalecer sua fé, enriquecer seus estudos e orientar sua caminhada diária.</p></div>
+<div class="grid hub-grid">
+  <article class="card hub-card">
+    <div class="hub-card-header"><span class="hub-badge">Estudos Bíblicos</span><h3>Séries de Estudo</h3></div>
+    <p>Aprofunde-se nas Escrituras com séries temáticas e expositivas para aplicar a Palavra no cotidiano.</p>
+    <div class="hub-links">
+      <a href="/artigos/estudos-de-quarta-feira/" class="hub-link-item"><strong>Série: Estudos de Quarta-feira</strong><span>Inspirados em A Vida em Cristo (John Stott) ↗</span></a>
+      <a href="/estudos-biblicos/" class="hub-main-action">Ver Central de Estudos Bíblicos ↗</a>
+    </div>
+  </article>
+
+  <article class="card hub-card">
+    <div class="hub-card-header"><span class="hub-badge hub-badge-coming">Devocionais · Em breve</span><h3>Devocionais Diários</h3></div>
+    <p>Espaço preparado para novas leituras e meditações diárias para inspirar sua oração e estudo pessoal.</p>
+    <div class="hub-links">
+      <a href="/devocionais/" class="hub-link-item"><strong>Devocionais e Reflexões</strong><span>Acesse nosso guia para a caminhada diária ↗</span></a>
+      <a href="/devocionais/" class="hub-main-action">Explorar Devocionais ↗</a>
+    </div>
+  </article>
+
+  <article class="card hub-card">
+    <div class="hub-card-header"><span class="hub-badge">Artigos</span><h3>Artigos & Reflexões</h3></div>
+    <p>Leituras recentes sobre fé, vida comunitária e ensinamentos de Jesus.</p>
+    <div class="hub-links">
+      {artigos.map(a=><a href={`/artigos/${a.id}/`} class="hub-link-item"><strong>{a.data.title}</strong><span>{a.data.description} ↗</span></a>)}
+      <a href="/artigos/" class="hub-main-action">Ver Todos os Artigos ↗</a>
+    </div>
+  </article>
+
+  <article class="card hub-card">
+    <div class="hub-card-header"><span class="hub-badge">Mensagens</span><h3>Sermões & Pregações</h3></div>
+    <p>Reflexões e mensagens ministradas em nossos cultos para ouvir e acompanhar durante a semana.</p>
+    <div class="hub-links">
+      <a href="/mensagens/" class="hub-link-item"><strong>Acervo de Mensagens</strong><span>Ouça e releia sermões pregados na PIB Brejetuba ↗</span></a>
+      <a href="/mensagens/" class="hub-main-action">Ver Mensagens ↗</a>
+    </div>
+  </article>
+</div></div></section>
+
+<!-- Oração e Acolhimento -->
 <section class="section section-soft"><div class="wrap split"><div><span class="eyebrow">Oração e acolhimento</span><h2>Podemos orar com você.</h2><p>Você não precisa atravessar sozinho os desafios da vida. Se deseja conversar, pedir oração ou conhecer a comunidade, venha nos encontrar em um dos cultos.</p><a class="btn" href="/oracao/">Saiba mais ↗</a></div><div class="card"><h3>Onde estamos</h3><p>{site.address}</p><p>Em frente ao Posto Pernambuco, no Centro.</p><a href={site.maps} target="_blank" rel="noopener noreferrer">Traçar rota no Google Maps ↗</a><p><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">Converse com o Pastor Márcio no WhatsApp ↗</a></p><p><a href={site.instagram} target="_blank" rel="noopener noreferrer">Acompanhe nosso Instagram ↗</a></p></div></div></section>
+
 <script>
 const now=new Date();
 const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
@@ -26,9 +97,9 @@ const cards=[...document.querySelectorAll<HTMLElement>('[data-event-end]')];
 cards.forEach(card=>{if((card.dataset.eventEnd??'')<today)card.remove()});
 const empty=document.getElementById('sem-eventos');
 if(empty && !document.querySelector('[data-event-end]'))empty.hidden=false;
-const month=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now);
 const anniversary=document.getElementById('aniversario-destaque');
 if(anniversary && today>'2026-11-22')anniversary.remove();
+const month=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now);
 const seasonal=document.getElementById('setembro-amarelo');
 if(seasonal && month==='9')seasonal.hidden=false;
 </script>

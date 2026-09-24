@@ -15,3 +15,47 @@
 @media(max-width:700px){.board-list{grid-template-columns:1fr}}
 
 .mission-home-banner{background:#174c41;color:#fff;border-bottom:4px solid #f5c84f}.mission-home-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-block:17px}.mission-home-inner div{display:grid;line-height:1.4}.mission-home-inner strong{font-size:1.05rem}.mission-home-inner span{color:#e1f1e7}.mission-home-inner a{background:#f5c84f;color:#12382f;text-decoration:none;font-weight:800;border-radius:4px;padding:10px 15px;white-space:nowrap}.mission-home-inner a span{color:inherit}@media(max-width:700px){.mission-home-inner{align-items:start;flex-direction:column}.mission-home-inner a{white-space:normal}}
+
+/* Dropdown & Header Navigation */
+.nav-dropdown{position:relative;display:inline-block}
+.nav-dropdown-toggle{background:transparent;border:none;font-size:.85rem;font-weight:650;color:inherit;cursor:pointer;display:flex;align-items:center;gap:5px;padding:8px 0;font-family:inherit}
+.nav-dropdown-toggle:hover,.nav-dropdown:focus-within .nav-dropdown-toggle,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--clay)}
+.dropdown-arrow{transition:transform .2s ease}
+.nav-dropdown:hover .dropdown-arrow,.nav-dropdown:focus-within .dropdown-arrow{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:100%;left:0;min-width:190px;background:white;border:1px solid #e9e1d8;border-radius:8px;box-shadow:0 10px 25px rgba(0,0,0,0.08);padding:6px 0;display:none;z-index:50}
+.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:8px 16px;font-size:.85rem;font-weight:600;color:var(--dark);text-decoration:none;transition:background .15s,color .15s}
+.dropdown-menu a:hover,.dropdown-menu a[aria-current]{background:var(--cream);color:var(--clay)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.mobile-group{display:flex;flex-direction:column;gap:4px;border-top:1px solid #eee;padding-top:8px;margin-top:4px}
+.mobile-group-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--clay);margin-bottom:2px}
+.mobile-highlight{font-weight:750;color:var(--clay)}
+.mobile-cta{background:var(--clay);color:white!important;text-align:center;border-radius:5px;padding:10px!important;font-weight:750;margin-top:8px}
+.footer-grid{grid-template-columns:1.2fr 1fr .8fr 1.1fr;gap:40px}
+
+/* Dynamic Notices Component */
+.notice-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+.notice-card{border-left:4px solid var(--clay);display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s ease,box-shadow .2s ease}
+.notice-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(53,40,28,.08)}
+.notice-card h3{font-size:1.35rem;margin-block:6px 10px}
+.notice-card p{flex-grow:1;font-size:.93rem;margin-bottom:18px}
+
+/* Visitor Journey Flow Component */
+.visitor-flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:15px}
+.visitor-step-card{background:white;border:1px solid #eadfd2;border-radius:9px;padding:28px;display:flex;flex-direction:column}
+.visitor-step-card .step-num{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--clay);margin-bottom:12px}
+
+/* Hub / Grid Component for Conhecimento */
+.hub-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+.hub-card{display:flex;flex-direction:column;border-top:3px solid var(--coffee)}
+.hub-card-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.hub-badge{background:#e9f0ee;color:var(--coffee);font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:100px}
+.hub-badge-coming{background:#fdf2e9;color:var(--clay)}
+.hub-links{margin-top:auto;display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid #f0e6da}
+.hub-link-item{display:flex;flex-direction:column;text-decoration:none;font-size:.88rem;padding:8px 12px;background:#faf7f2;border-radius:6px;transition:background .15s ease}
+.hub-link-item:hover{background:#f2e9dc}
+.hub-link-item strong{color:var(--dark)}
+.hub-link-item span{color:var(--muted);font-size:.8rem}
+.hub-main-action{font-weight:750;color:var(--clay);text-decoration:none;margin-top:4px;font-size:.9rem}
+
+@media(max-width:760px){.notice-grid,.hub-grid,.visitor-flow-grid{grid-template-columns:1fr}}

@@ -1,5 +1,5 @@
 ---
-import {site, links} from '../data';
+import {site, navGroups, mainNavLinks} from '../data';
 import '../styles.css';
 interface Props { title: string; description: string; image?: string; type?: 'website'|'article'; jsonLd?: Record<string,unknown>; noindex?: boolean }
 const {title,description,image='/images/celebracao-comunidade.jpg',type='website',jsonLd,noindex=false}=Astro.props;
@@ -55,10 +55,46 @@ const website={ '@context':'https://schema.org','@type':'WebSite','@id':`${site.
 <div class="topline"><div class="wrap">Uma comunidade de fé no coração de Brejetuba, ES <a href="/horarios-dos-cultos/">Veja nossos horários <span aria-hidden="true">↗</span></a></div></div>
 <header class="header"><div class="wrap nav">
 <a class="brand" href="/" aria-label="PIB Brejetuba — página inicial"><img class="brand-logo" src="/images/logo.png" width="366" height="462" alt="Logomarca da Primeira Igreja Batista em Brejetuba - ES"/><span>PRIMEIRA IGREJA BATISTA<small>EM BREJETUBA</small></span></a>
-<nav aria-label="Navegação principal" class="desktop-nav">{links.map(l=><a href={l.href} aria-current={Astro.url.pathname===l.href?'page':undefined}>{l.label}</a>)}</nav>
-<a class="btn btn-small nav-cta" href="/primeira-visita/">Venha nos visitar <span aria-hidden="true">↗</span></a>
-<details class="mobile-menu"><summary aria-label="Abrir menu">Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Navegação móvel">{links.map(l=><a href={l.href}>{l.label}</a>)}</nav></details>
+<nav aria-label="Navegação principal" class="desktop-nav">
+  {navGroups.map(group => (
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+        {group.label}
+        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dropdown-menu">
+        {group.items.map(item => (
+          <a href={item.href} aria-current={Astro.url.pathname === item.href ? 'page' : undefined}>{item.label}</a>
+        ))}
+      </div>
+    </div>
+  ))}
+  {mainNavLinks.map(l => (
+    <a href={l.href} aria-current={Astro.url.pathname === l.href ? 'page' : undefined}>{l.label}</a>
+  ))}
+</nav>
+<div class="header-actions">
+  <a class="btn btn-small nav-cta" href="/contribua/">Contribua <span aria-hidden="true">↗</span></a>
+</div>
+<details class="mobile-menu">
+  <summary aria-label="Abrir menu">Menu <span aria-hidden="true">☰</span></summary>
+  <nav aria-label="Navegação móvel">
+    <a href="/primeira-visita/" class="mobile-highlight">Primeira visita ↗</a>
+    {navGroups.map(group => (
+      <div class="mobile-group">
+        <span class="mobile-group-title">{group.label}</span>
+        {group.items.map(item => (
+          <a href={item.href} aria-current={Astro.url.pathname === item.href ? 'page' : undefined}>{item.label}</a>
+        ))}
+      </div>
+    ))}
+    {mainNavLinks.map(l => (
+      <a href={l.href} aria-current={Astro.url.pathname === l.href ? 'page' : undefined}>{l.label}</a>
+    ))}
+    <a href="/contribua/" class="mobile-cta">Contribua (Dízimos e Ofertas) ↗</a>
+  </nav>
+</details>
 </div></header>
 <main id="conteudo"><slot/></main>
-<footer class="footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="/"><img class="brand-logo" src="/images/logo.png" width="366" height="462" alt="Logomarca oficial da Primeira Igreja Batista em Brejetuba - ES"/><span>PRIMEIRA IGREJA BATISTA<small>EM BREJETUBA</small></span></a><p>{site.slogan}</p><p>Uma comunidade para conhecer Jesus, crescer na Palavra e servir nossa cidade.</p></div><div><h2>Encontre-nos</h2><p>{site.address}</p><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp do Pastor Márcio: {site.phoneDisplay} ↗</a><a href={`tel:${site.phone}`}>Ligar: {site.phoneDisplay}</a><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram da PIB Brejetuba ↗</a><a href={site.maps} target="_blank" rel="noopener noreferrer">Abrir rota no Google Maps ↗</a><p>Domingo: 08h e 19h<br/>Quarta-feira: 19h30</p></div><div><h2>Explore</h2><a href="/primeira-visita/">Sua primeira visita</a><a href="/eventos/">Agenda</a><a href="/lideranca/">Liderança</a><a href="/galeria/">Galeria</a><a href="/no-que-cremos/">No que cremos</a><a href="/discipulado/">Discipulado</a><a href="/oracao/">Oração</a><a href="/artigos/">Artigos</a><a href="/privacidade/">Privacidade</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} Primeira Igreja Batista em Brejetuba</span><span>Brejetuba · Espírito Santo</span></div></footer>
+<footer class="footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="/"><img class="brand-logo" src="/images/logo.png" width="366" height="462" alt="Logomarca oficial da Primeira Igreja Batista em Brejetuba - ES"/><span>PRIMEIRA IGREJA BATISTA<small>EM BREJETUBA</small></span></a><p>{site.slogan}</p><p>Uma comunidade para conhecer Jesus, crescer na Palavra e servir nossa cidade.</p></div><div><h2>Encontre-nos</h2><p>{site.address}</p><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp do Pastor Márcio: {site.phoneDisplay} ↗</a><a href={`tel:${site.phone}`}>Ligar: {site.phoneDisplay}</a><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram da PIB Brejetuba ↗</a><a href={site.maps} target="_blank" rel="noopener noreferrer">Abrir rota no Google Maps ↗</a><p>Domingo: 08h e 19h<br/>Quarta-feira: 19h30</p></div><div><h2>Explore</h2><a href="/primeira-visita/">Sua primeira visita</a><a href="/eventos/">Agenda</a><a href="/lideranca/">Liderança</a><a href="/galeria/">Galeria</a><a href="/no-que-cremos/">No que cremos</a><a href="/discipulado/">Discipulado</a><a href="/oracao/">Oração</a><a href="/artigos/">Artigos</a><a href="/contribua/">Contribua</a><a href="/privacidade/">Privacidade</a></div><div><h2>Brejetuba e Região</h2><a href="/igreja-em-brejetuba/">Igreja em Brejetuba</a><a href="/igreja-batista-em-brejetuba/">Igreja Batista em Brejetuba</a><a href="/cultos-em-brejetuba/">Cultos em Brejetuba</a><a href="/estudo-biblico-em-brejetuba/">Estudo bíblico em Brejetuba</a><a href="/historia-batista-em-brejetuba/">História Batista em Brejetuba</a><a href="/batistas-no-espirito-santo/">Batistas no Espírito Santo</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} Primeira Igreja Batista em Brejetuba</span><span>Brejetuba · Espírito Santo</span></div></footer>
 </body></html>
