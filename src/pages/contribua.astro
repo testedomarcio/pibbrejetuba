@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Adoração através da Generosidade"
+  description="Faça sua contribuição de dízimos e ofertas para a Primeira Igreja Batista em Brejetuba de forma rápida e segura através do PIX."
+>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="bread"><a href="/">Início</a> / Contribua</div>
+      <span class="eyebrow">Dízimos e Ofertas · PIB Brejetuba</span>
+      <h1>Adoração através da Generosidade</h1>
+      <p>
+        Acreditamos que a nossa generosidade é uma resposta ao amor e à graça que recebemos de Jesus.
+        Com os seus dízimos e ofertas, você faz parte de tudo o que Deus está construindo em nossa igreja,
+        na nossa cidade e no mundo. Faça a sua contribuição de forma rápida e segura:
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap" style="max-width: 680px;">
+      <div class="card pix-card" style="padding: 36px; border: 2px solid var(--clay); border-radius: 12px; background: #fffdfa;">
+        <div class="pix-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #ebdcd0;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+            <h2 style="margin: 0; font-size: 1.5rem; color: var(--coffee);">Chave PIX Oficial</h2>
+          </div>
+          <span class="hub-badge" style="background: #f1e4d8; color: var(--clay);">PIX</span>
+        </div>
+
+        <div class="pix-details" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px;">
+          <div style="background: var(--cream); padding: 16px; border-radius: 8px;">
+            <span style="display: block; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clay); margin-bottom: 4px;">Tipo de Chave</span>
+            <strong style="font-size: 1.1rem; color: var(--dark);">CNPJ</strong>
+          </div>
+
+          <div style="background: var(--cream); padding: 16px; border-radius: 8px;">
+            <span style="display: block; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clay); margin-bottom: 4px;">Chave PIX (CNPJ)</span>
+            <code id="pix-key" style="font-family: monospace, monospace; font-size: 1.3rem; font-weight: bold; color: var(--coffee); word-break: break-all;">12.270.218/0001-45</code>
+          </div>
+
+          <div style="background: var(--cream); padding: 16px; border-radius: 8px;">
+            <span style="display: block; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clay); margin-bottom: 4px;">Favorecido</span>
+            <strong style="font-size: 1.05rem; color: var(--dark);">Primeira Igreja Batista em Brejetuba (PIB Brejetuba)</strong>
+          </div>
+
+          <div style="background: var(--cream); padding: 16px; border-radius: 8px;">
+            <span style="display: block; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clay); margin-bottom: 4px;">Instituição Financeira</span>
+            <strong style="font-size: 1.05rem; color: var(--dark);">Banco Sicoob Sul Serrano</strong>
+          </div>
+        </div>
+
+        <button id="copy-pix-btn" type="button" class="btn" style="width: 100%; font-size: 1.05rem; padding: 16px; gap: 10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span id="copy-btn-text">Copiar Chave PIX</span>
+        </button>
+      </div>
+
+      <div style="margin-top: 40px; text-align: center; color: var(--muted); font-size: 0.95rem;">
+        <p>Se tiver qualquer dúvida sobre sua contribuição, entre em contato com nossa equipe ou tesouraria.</p>
+        <a href="/contato/" class="btn btn-light" style="margin-top: 10px;">Falar conosco ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const copyBtn = document.getElementById('copy-pix-btn');
+    const copyText = document.getElementById('copy-btn-text');
+    const pixKey = '12.270.218/0001-45';
+
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(pixKey);
+          } else {
+            const textArea = document.createElement('textarea');
+            textArea.value = pixKey;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+          }
+          const originalText = copyText.textContent;
+          copyText.textContent = '✓ Chave PIX Copiada!';
+          copyBtn.style.background = '#25433d';
+          setTimeout(() => {
+            copyText.textContent = originalText;
+            copyBtn.style.background = '';
+          }, 3000);
+        } catch (err) {
+          console.error('Falha ao copiar:', err);
+        }
+      });
+    }
+  </script>
+</Base>

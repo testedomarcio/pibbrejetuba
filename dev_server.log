@@ -1,0 +1,24 @@
+
+> pib-brejetuba@1.0.0 dev
+> astro dev
+
+23:14:27 [types] Generated 1ms
+
+ update  ▶ New version of Astro available: 7.3.5
+  Run npx @astrojs/upgrade to update
+
+23:14:28 [content] Syncing content
+23:14:28 [content] Synced content
+23:14:28 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v5.18.2 ready in 1504 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+23:14:28 watching for file changes...
+23:14:29 [200] / 161ms
+23:15:12 [200] / 15ms
+23:15:14 [200] /contribua/ 7ms
+23:15:14 [200] /quero-fazer-parte-da-familia/ 6ms
+23:15:15 [200] /quem-somos/ 8ms
