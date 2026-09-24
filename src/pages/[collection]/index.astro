@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';import {getCollection} from 'astro:content';
+const titles={artigos:'Artigos',mensagens:'Mensagens',eventos:'Eventos'} as const;
+const intros={artigos:'Textos bíblicos para estudar, refletir e aplicar à vida.',mensagens:'Pregações e reflexões da caminhada da nossa igreja.',eventos:'Programações e encontros da nossa comunidade.'} as const;
+export async function getStaticPaths(){return await Promise.all((['artigos','mensagens','eventos'] as const).map(async collection=>({params:{collection},props:{items:(await getCollection(collection,({data})=>!data.draft)).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf())}})))}
+const collection=Astro.params.collection as keyof typeof titles;
+const {items}=Astro.props;
+---
+<Base title={titles[collection]} description={`${intros[collection]} Primeira Igreja Batista em Brejetuba, Espírito Santo.`}><div class="page-hero"><div class="wrap"><span class="eyebrow">Conhecimento e comunidade</span><h1>{titles[collection]}</h1><p>{intros[collection]}</p></div></div><section class="section"><div class="wrap"><div class="grid grid-2">{items.length?items.map((item:any)=><article class="card content-card"><time datetime={item.data.date.toISOString()}>{item.data.date.toLocaleDateString('pt-BR',{timeZone:'UTC'})}</time><h3><a href={`/${collection}/${item.id}/`}>{item.data.title} ↗</a></h3><p>{item.data.description}</p></article>):<div class="card"><h2>Em breve</h2><p>Estamos organizando os conteúdos desta seção. Enquanto isso, veja nossos horários e venha participar pessoalmente.</p><a href="/horarios-dos-cultos/">Horários dos cultos ↗</a></div>}</div></div></section></Base>
