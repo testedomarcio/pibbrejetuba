@@ -9,8 +9,40 @@ const {page}=Astro.props;
 const slug=Astro.params.slug;
 const isGallery=slug==='galeria';
 const isAbout=slug==='quem-somos';
+const isVideos=slug==='videos';
 ---
 <Base title={page.title} description={page.description}>
 <div class="page-hero"><div class="wrap"><div class="bread"><a href="/">Início</a> / {page.title}</div><span class="eyebrow">{page.eyebrow}</span><h1>{page.title}</h1><p>{page.intro}</p></div></div>
-<section class="section"><div class="wrap">{isAbout && <figure class="about-photo"><img src="/images/igreja-reunida.jpg" alt="Comunidade da Primeira Igreja Batista em Brejetuba - ES reunida para o culto" width="1200" height="800"/><figcaption>Pessoas e histórias que fazem parte da nossa comunidade em Brejetuba - ES.</figcaption></figure>}<div class="prose">{page.sections.map(s=><section><h2>{s.heading}</h2><p>{s.body}</p>{s.link&&<p><a href={s.link.href} target={s.link.href.startsWith('http')?'_blank':undefined} rel={s.link.href.startsWith('http')?'noopener noreferrer':undefined}>{s.link.label} ↗</a></p>}</section>)}</div>{isGallery && <div class="gallery-grid">{galleryImages.map(photo=><figure><img src={photo.src} alt={photo.alt} loading="lazy" width="685" height="913"/><figcaption>{photo.caption}</figcaption></figure>)}</div>}<div class="cta-panel center"><h2>Há um lugar para você aqui.</h2><p>Conheça nossa comunidade pessoalmente em Brejetuba.</p><div class="actions"><a class="btn" href="/primeira-visita/">Planeje sua visita ↗</a><a class="btn btn-light" href={site.maps} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div></div></div></section>
+<section class="section"><div class="wrap">{isAbout && <figure class="about-photo"><img src="/images/igreja-reunida.jpg" alt="Comunidade da Primeira Igreja Batista em Brejetuba - ES reunida para o culto" width="1200" height="800"/><figcaption>Pessoas e histórias que fazem parte da nossa comunidade em Brejetuba - ES.</figcaption></figure>}
+
+{isVideos && (
+  <div style="max-width: 860px; margin: 0 auto 50px;">
+    <div class="youtube-channel-banner">
+      <div class="youtube-banner-content">
+        <span class="eyebrow">Canal do Pr. Márcio Souza</span>
+        <h2>Acompanhe as nossas mensagens e estudos no YouTube</h2>
+        <p>Inscreva-se no canal do Pr. Márcio Souza para assistir às pregações, estudos bíblicos e novidades da nossa comunidade.</p>
+        <a href="https://www.youtube.com/@pr.marciosouza" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Inscreva-se no canal do Pr. Márcio Souza
+        </a>
+      </div>
+    </div>
+
+    <div class="youtube-embed-container" style="margin-top: 36px;">
+      <h3 style="margin-bottom: 16px; font-size: 1.4rem;">Vídeo mais recente</h3>
+      <div class="video-responsive">
+        <iframe
+          src="https://www.youtube.com/embed/MnGVQo2kgHE"
+          title="Vídeo mais recente do canal Pr. Márcio Souza"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+)}
+
+<div class="prose">{page.sections.map(s=><section><h2>{s.heading}</h2><p>{s.body}</p>{s.link&&<p><a href={s.link.href} target={s.link.href.startsWith('http')?'_blank':undefined} rel={s.link.href.startsWith('http')?'noopener noreferrer':undefined}>{s.link.label} ↗</a></p>}</section>)}</div>{isGallery && <div class="gallery-grid">{galleryImages.map(photo=><figure><img src={photo.src} alt={photo.alt} loading="lazy" width="685" height="913"/><figcaption>{photo.caption}</figcaption></figure>)}</div>}<div class="cta-panel center"><h2>Há um lugar para você aqui.</h2><p>Conheça nossa comunidade pessoalmente em Brejetuba.</p><div class="actions"><a class="btn" href="/primeira-visita/">Planeje sua visita ↗</a><a class="btn btn-light" href={site.maps} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div></div></div></section>
 </Base>
