@@ -5,6 +5,10 @@ export const site = {
   slogan: 'Uma igreja apaixonada por Jesus, profunda em conhecimento e relevante para a cidade.',
   address: 'Av. Firmino Teixeira Griffo, 504 — Centro, Brejetuba — ES',
   maps: 'https://www.google.com/maps/search/?api=1&query=Primeira+Igreja+Batista+em+Brejetuba',
+  phone: '+5527998738910',
+  phoneDisplay: '(27) 99873-8910',
+  whatsapp: 'https://wa.me/5527998738910',
+  email: 'contato@batistabrejetuba.com.br',
   schedule: [
     {day:'Domingo', time:'08h', name:'Escola Bíblica Dominical'},
     {day:'Domingo', time:'19h', name:'Culto de celebração'},
