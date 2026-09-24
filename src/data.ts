@@ -16,12 +16,45 @@ export const site = {
     {day:'Quarta-feira', time:'19h30', name:'Culto de ensino'}
   ]
 };
+export const navGroups = [
+  {
+    label: 'Nossa Igreja',
+    items: [
+      { href: '/quem-somos/', label: 'Quem somos' },
+      { href: '/nossa-historia/', label: 'Nossa história' },
+      { href: '/no-que-cremos/', label: 'No que cremos' },
+      { href: '/lideranca/', label: 'Liderança' },
+    ]
+  },
+  {
+    label: 'Ministérios',
+    items: [
+      { href: '/discipulado/', label: 'Discipulado' },
+      { href: '/batismo/', label: 'Batismo' },
+      { href: '/escola-biblica/', label: 'Escola Bíblica' },
+      { href: '/oracao/', label: 'Oração' },
+      { href: '/missoes/', label: 'Missões' },
+    ]
+  },
+  {
+    label: 'Recursos',
+    items: [
+      { href: '/videos/', label: 'Vídeos' },
+      { href: '/galeria/', label: 'Galeria' },
+      { href: '/documentos/', label: 'Documentos' },
+    ]
+  }
+];
+
+export const mainNavLinks = [
+  { href: '/eventos/', label: 'Agenda' },
+  { href: '/estudos-biblicos/', label: 'Conhecimento' },
+  { href: '/contato/', label: 'Contato' }
+];
+
 export const links = [
-  {href:'/primeira-visita/',label:'Primeira visita'},
-  {href:'/eventos/',label:'Agenda'},
-  {href:'/quem-somos/',label:'Quem somos'},
-  {href:'/horarios-dos-cultos/',label:'Cultos'},
-  {href:'/ministerios/',label:'Ministérios'},
-  {href:'/estudos-biblicos/',label:'Conhecimento'},
-  {href:'/contato/',label:'Contato'}
+  { href: '/primeira-visita/', label: 'Primeira visita' },
+  ...navGroups.flatMap(g => g.items),
+  ...mainNavLinks,
+  { href: '/contribua/', label: 'Contribua' }
 ];
