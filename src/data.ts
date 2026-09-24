@@ -54,6 +54,7 @@ export const mainNavLinks = [
 
 export const links = [
   { href: '/primeira-visita/', label: 'Primeira visita' },
+  { href: '/quero-fazer-parte-da-familia/', label: 'Quero fazer parte da família' },
   ...navGroups.flatMap(g => g.items),
   ...mainNavLinks,
   { href: '/contribua/', label: 'Contribua' }

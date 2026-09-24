@@ -26,7 +26,13 @@
 .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
 .dropdown-menu a{display:block;padding:8px 16px;font-size:.85rem;font-weight:600;color:var(--dark);text-decoration:none;transition:background .15s,color .15s}
 .dropdown-menu a:hover,.dropdown-menu a[aria-current]{background:var(--cream);color:var(--clay)}
-.header-actions{display:flex;align-items:center;gap:10px}
+.header-actions{display:flex;align-items:center;gap:14px}
+.social-icon-link{display:inline-flex;align-items:center;justify-content:center;color:var(--coffee);padding:8px;border-radius:50%;transition:color .2s,background .2s}
+.social-icon-link:hover{color:var(--clay);background:var(--cream)}
+.social-icon{display:inline-block;vertical-align:middle;flex-shrink:0}
+.mobile-social-link{display:flex!important;align-items:center;gap:8px;font-weight:600;color:var(--coffee);padding:6px 0}
+.mobile-social-link:hover{color:var(--clay)}
+.footer-social-link{display:inline-flex!important;align-items:center;gap:8px}
 .mobile-group{display:flex;flex-direction:column;gap:4px;border-top:1px solid #eee;padding-top:8px;margin-top:4px}
 .mobile-group-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--clay);margin-bottom:2px}
 .mobile-highlight{font-weight:750;color:var(--clay)}
@@ -59,3 +65,17 @@
 .hub-main-action{font-weight:750;color:var(--clay);text-decoration:none;margin-top:4px;font-size:.9rem}
 
 @media(max-width:760px){.notice-grid,.hub-grid,.visitor-flow-grid{grid-template-columns:1fr}}
+
+/* Integration Form Styles */
+.integration-form{display:flex;flex-direction:column;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-weight:700;font-size:.92rem;color:var(--dark)}
+.required-star{color:var(--clay)}
+.optional-tag{font-weight:400;font-size:.8rem;color:var(--muted)}
+.form-input{width:100%;padding:12px 14px;border:1px solid #dcd1c4;border-radius:6px;font-size:1rem;background:#fff;color:var(--dark);transition:border-color .2s,box-shadow .2s}
+.form-input:focus{outline:none;border-color:var(--coffee);box-shadow:0 0 0 3px rgba(37,67,61,.15)}
+select.form-input{cursor:pointer}
+.confirmation-box{text-align:center;padding:20px 10px}
+.confirmation-icon{width:56px;height:56px;border-radius:50%;background:#e6f3ed;color:var(--coffee);font-size:1.8rem;font-weight:bold;display:grid;place-items:center;margin:0 auto 18px}
+.confirmation-box h2{font-size:1.6rem;color:var(--coffee);margin-bottom:10px}
+.confirmation-box p{color:var(--muted);font-size:1.05rem}

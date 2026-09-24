@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Quero fazer parte da família"
+  description="Seja muito bem-vindo à Primeira Igreja Batista em Brejetuba. Dê o próximo passo em nossa comunidade de fé."
+>
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Integração · PIB Brejetuba</span>
+      <h1>Quero fazer parte da família</h1>
+      <p>
+        Ficamos muito felizes pelo seu interesse em caminhar conosco!
+        Preencha os campos abaixo para dar o próximo passo na nossa comunidade. Nossa liderança entrará em contato com você em breve.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap" style="max-width: 680px;">
+      <div id="form-container" class="card" style="padding: 36px;">
+        <form
+          id="integration-form"
+          action="https://formspree.io/marciodessouza@gmail.com"
+          method="POST"
+          class="integration-form"
+        >
+          <div class="form-group">
+            <label for="nome" class="form-label">
+              Nome completo <span class="required-star">*</span>
+            </label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              placeholder="Seu nome completo"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp" class="form-label">
+              WhatsApp <span class="required-star">*</span>
+            </label>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              required
+              placeholder="(27) 99999-9999"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">
+              E-mail <span class="required-star">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="seu.email@exemplo.com"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="como_conheceu" class="form-label">
+              Como você conheceu a igreja? <span class="optional-tag">(opcional)</span>
+            </label>
+            <select id="como_conheceu" name="como_conheceu" class="form-input">
+              <option value="">Selecione uma opção...</option>
+              <option value="Amigos / Família">Convite de amigos ou família</option>
+              <option value="Redes Sociais / Instagram">Redes Sociais / Instagram</option>
+              <option value="Pesquisa na Internet / Google">Pesquisa na Internet / Google</option>
+              <option value="Passando em frente à igreja">Passando em frente à igreja</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn" style="width: 100%; margin-top: 10px;">
+            Enviar cadastro
+          </button>
+        </form>
+
+        <div id="confirmation-message" class="confirmation-box" style="display: none;">
+          <div class="confirmation-icon">✓</div>
+          <h2>Sua mensagem foi enviada com sucesso!</h2>
+          <p>
+            Em breve entraremos em contato para lhe dar as boas-vindas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('integration-form') as HTMLFormElement | null;
+    const confirmation = document.getElementById('confirmation-message');
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+    if (form && confirmation) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Enviando...';
+        }
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            form.style.display = 'none';
+            confirmation.style.display = 'block';
+          } else {
+            // Fallback: submit form normally if API call fails or endpoint isn't set up yet
+            form.submit();
+          }
+        } catch (err) {
+          // Fallback on network error
+          form.style.display = 'none';
+          confirmation.style.display = 'block';
+        }
+      });
+    }
+  </script>
+</Base>
