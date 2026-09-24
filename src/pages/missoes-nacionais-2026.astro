@@ -2,8 +2,8 @@
 import Base from '../layouts/Base.astro';
 import {site} from '../data';
 
-const title='Missões Nacionais 2026 em Brejetuba';
-const description='Abertura da Campanha de Missões Nacionais 2026 na Primeira Igreja Batista em Brejetuba: 27 de setembro, domingo, às 19h. Ore, contribua e sirva para que todo o Brasil ouça.';
+const title='Missões Nacionais 2026 — Primeira Igreja Batista em Brejetuba (ES)';
+const description='Abertura da Campanha de Missões Nacionais 2026 na PIB Brejetuba (ES): 27 de setembro, domingo, às 19h no Centro de Brejetuba, Espírito Santo.';
 const event={
   '@context':'https://schema.org',
   '@type':'Event',
@@ -16,7 +16,6 @@ const event={
   organizer:{'@type':'Church',name:site.name,url:site.url},
   url:`${site.url}/missoes-nacionais-2026/`
 };
-const official='https://missoesnacionais.org.br';
 ---
 <Base title={title} description={description} jsonLd={event}>
   <article class="missions">
@@ -29,7 +28,7 @@ const official='https://missoesnacionais.org.br';
           <div class="missions-event"><span>Domingo, 27 de setembro de 2026</span><strong>Culto de abertura · 19h</strong><span>Primeira Igreja Batista em Brejetuba, ES</span></div>
           <div class="missions-actions"><a href="#participe" class="missions-button">Quero participar</a><a href="#contribua" class="missions-text-link">Como contribuir ↘</a></div>
         </div>
-        <div class="missions-visual"><img src="${official}/wp-content/uploads/2026/07/Logo-Em-breve-1024x961.png" alt="Identidade visual oficial da Campanha de Missões Nacionais 2026: Para que todo o Brasil ouça" width="1024" height="961" fetchpriority="high"/><span>Material visual: Junta de Missões Nacionais da CBB</span></div>
+        <div class="missions-visual"><img src="https://missoesnacionais.org.br/wp-content/uploads/2026/07/Logo-Em-breve-1024x961.png" alt="Identidade visual oficial da Campanha de Missões Nacionais 2026: Para que todo o Brasil ouça" width="1024" height="961" fetchpriority="high"/><span>Material visual: Junta de Missões Nacionais da CBB</span></div>
       </div>
     </header>
 
@@ -41,9 +40,9 @@ const official='https://missoesnacionais.org.br';
       <div class="missions-card"><span class="missions-number">03</span><h3>Sirva</h3><p>Esteja presente, convide alguém para o culto e converse com a igreja sobre como usar seu tempo e seus dons na mobilização missionária e no testemunho em nossa cidade.</p></div>
     </div></div></section>
 
-    <section class="missions-media"><div class="wrap missions-media-grid"><div><span class="missions-label">A campanha pelo Brasil</span><h2>Conheça o que Deus está fazendo</h2><p>A Junta de Missões Nacionais destaca diferentes povos e realidades na campanha: ribeirinhos, indígenas, sertanejos, surdos, imigrantes, crianças em situação de vulnerabilidade, ciganos e quilombolas. Cada pessoa merece ouvir a mensagem de Jesus de modo que possa compreendê-la.</p><a href="${official}/campanha/" target="_blank" rel="noopener noreferrer">Conheça a campanha nacional ↗</a></div><figure><img src="${official}/wp-content/uploads/2026/09/Culto-de-Lancamento-da-Campanha-de-Missoes-Nacionais-2026-1024x683.jpg" alt="Culto de lançamento da Campanha de Missões Nacionais 2026" width="1024" height="683" loading="lazy"/><figcaption>Registro do lançamento nacional · Foto: Missões Nacionais</figcaption></figure></div></section>
+    <section class="missions-media"><div class="wrap missions-media-grid"><div><span class="missions-label">A campanha pelo Brasil</span><h2>Conheça o que Deus está fazendo</h2><p>A Junta de Missões Nacionais destaca diferentes povos e realidades na campanha: ribeirinhos, indígenas, sertanejos, surdos, imigrantes, crianças em situação de vulnerabilidade, ciganos e quilombolas. Cada pessoa merece ouvir a mensagem de Jesus de modo que possa compreendê-la.</p><a href="https://missoesnacionais.org.br/campanha/" target="_blank" rel="noopener noreferrer">Conheça a campanha nacional ↗</a></div><figure><img src="https://missoesnacionais.org.br/wp-content/uploads/2026/09/Culto-de-Lancamento-da-Campanha-de-Missoes-Nacionais-2026-1024x683.jpg" alt="Culto de lançamento da Campanha de Missões Nacionais 2026" width="1024" height="683" loading="lazy"/><figcaption>Registro do lançamento nacional · Foto: Missões Nacionais</figcaption></figure></div></section>
 
-    <section class="missions-video"><div class="wrap"><div class="missions-video-head"><div><span class="missions-label">Assista e compartilhe</span><h2>Vídeos oficiais da campanha</h2><p>Use estes materiais para conhecer a proposta e conversar sobre missões com sua família e amigos.</p></div><a href="${official}/materiais/videos/" target="_blank" rel="noopener noreferrer">Mais vídeos oficiais ↗</a></div><div class="missions-videos"><div class="missions-video-item"><div class="missions-frame"><iframe src="https://drive.google.com/file/d/15lyVdjgR2_02eMcYhIQlysZZFc1s69o-/preview" title="Clipe oficial da Campanha de Missões Nacionais 2026" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div><h3>Clipe oficial da campanha</h3></div><div class="missions-video-item"><div class="missions-frame"><iframe src="https://drive.google.com/file/d/1jgRysCmRYjwQBJS-c7KOPHIRqhhJu5c5/preview" title="Documentário oficial sobre os ribeirinhos, Missões Nacionais 2026" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div><h3>Documentário: ribeirinhos</h3></div></div><p class="missions-credit">Vídeos disponibilizados pela Junta de Missões Nacionais da Convenção Batista Brasileira.</p></div></section>
+    <section class="missions-video"><div class="wrap"><div class="missions-video-head"><div><span class="missions-label">Assista e compartilhe</span><h2>Vídeos oficiais da campanha</h2><p>Use estes materiais para conhecer a proposta e conversar sobre missões com sua família e amigos.</p></div><a href="https://missoesnacionais.org.br/materiais/videos/" target="_blank" rel="noopener noreferrer">Mais vídeos oficiais ↗</a></div><div class="missions-videos"><div class="missions-video-item"><div class="missions-frame"><iframe src="https://drive.google.com/file/d/15lyVdjgR2_02eMcYhIQlysZZFc1s69o-/preview" title="Clipe oficial da Campanha de Missões Nacionais 2026" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div><h3>Clipe oficial da campanha</h3></div><div class="missions-video-item"><div class="missions-frame"><iframe src="https://drive.google.com/file/d/1jgRysCmRYjwQBJS-c7KOPHIRqhhJu5c5/preview" title="Documentário oficial sobre os ribeirinhos, Missões Nacionais 2026" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div><h3>Documentário: ribeirinhos</h3></div></div><p class="missions-credit">Vídeos disponibilizados pela Junta de Missões Nacionais da Convenção Batista Brasileira.</p></div></section>
 
     <section id="contribua" class="missions-give"><div class="wrap missions-give-grid"><div><span class="missions-label">Oferta missionária</span><h2>Sua contribuição faz parte dessa missão.</h2><p>Se desejar ofertar para a Campanha de Missões Nacionais por meio da PIB Brejetuba, use o PIX abaixo. Antes de confirmar no seu banco, confira o nome do favorecido e identifique sua oferta na observação.</p></div><div class="missions-pix"><span>Chave PIX · CNPJ</span><strong id="pix-key">12.270.218/0001-45</strong><button type="button" id="copy-pix" aria-label="Copiar chave PIX">Copiar chave PIX</button><dl><div><dt>Favorecido</dt><dd>Primeira Igreja Batista em Brejetuba (PIB Brejetuba)</dd></div><div><dt>Observação do PIX</dt><dd><strong>Missões Nacionais</strong></dd></div></dl><small>Este PIX pertence à igreja local. Identifique a oferta com “Missões Nacionais”.</small></div></div></section>
 
