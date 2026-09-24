@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import {getCollection} from 'astro:content';
+import {site} from '../../data';
+
+const estudos = (await getCollection('artigos', ({data}) => !data.draft && data.category === 'Estudos de Quarta-feira'))
+  .sort((a,b) => (a.data.seriesOrder ?? 0) - (b.data.seriesOrder ?? 0));
+---
+<Base title="Estudos de Quarta-feira" description="Cinco estudos bíblicos sobre a vida em Cristo, inspirados nos primeiros capítulos do livro de John Stott. Participe do estudo presencial na PIB Brejetuba às quartas-feiras, 19h30.">
+  <div class="page-hero"><div class="wrap"><div class="bread"><a href="/">Início</a> / <a href="/artigos/">Artigos</a> / Estudos de Quarta-feira</div><span class="eyebrow">Série de estudos bíblicos</span><h1>Estudos de Quarta-feira</h1><p>Cinco reflexões sobre quem é Jesus e o que significa viver com ele. A série acompanha os temas dos cinco primeiros capítulos de <em>A Vida em Cristo</em>, de John Stott, com textos originais para ler a Bíblia e conversar em comunidade.</p></div></div>
+  <section class="section"><div class="wrap"><div class="series-banner"><div><span class="eyebrow">Venha estudar com a gente</span><h2>A leitura continua quando nos encontramos.</h2><p>Toda quarta-feira, às 19h30, no culto de ensino. {site.address}, em frente ao Posto Pernambuco. Você pode chegar com suas perguntas, mesmo que ainda não tenha lido o livro.</p></div><a class="btn" href="/primeira-visita/">Como participar ↗</a></div><div class="grid grid-2">{estudos.map(estudo => <article class="card series-item"><span class="num">{String(estudo.data.seriesOrder).padStart(2,'0')}</span><div><span class="eyebrow">Estudo {estudo.data.seriesOrder} de 5</span><h2><a href={`/artigos/${estudo.id}/`}>{estudo.data.title} ↗</a></h2><p>{estudo.data.description}</p></div></article>)}</div></div></section>
+</Base>
