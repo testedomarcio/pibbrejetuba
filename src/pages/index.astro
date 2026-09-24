@@ -5,102 +5,256 @@ import {getCollection} from 'astro:content';
 const artigos=(await getCollection('artigos',({data})=>!data.draft)).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf() || (a.data.seriesOrder??999)-(b.data.seriesOrder??999)).slice(0,2);
 const eventos=(await getCollection('eventos',({data})=>!data.draft)).sort((a,b)=>a.data.date.valueOf()-b.data.date.valueOf());
 ---
-<Base title={site.name} description="Primeira Igreja Batista em Brejetuba - ES: cultos aos domingos (08h e 19h) e quartas (19h30). Conheça nossa igreja no Centro de Brejetuba, Espírito Santo.">
-<section class="hero"><div class="wrap"><span class="eyebrow">Primeira Igreja Batista em Brejetuba · Espírito Santo</span><h1>Primeira Igreja Batista em Brejetuba — Conhecer Jesus e Caminhar Juntos</h1><p>Na Primeira Igreja Batista em Brejetuba, ES, queremos viver um relacionamento real com Jesus: a transformação começa no coração e alcança a família, as amizades e a nossa cidade no Espírito Santo.</p><div class="actions"><a class="btn" href="#jornada-visitante">Planeje sua visita ↗</a><a class="btn btn-light" href="#jornada-visitante">Horários e Como chegar ↗</a></div><div class="hero-note"><span>✦ Domingo às 08h e 19h</span><span>✦ Quarta-feira às 19h30</span><span>✦ Centro de Brejetuba - ES</span></div></div></section>
+<Base
+  title="Primeira Igreja Batista em Brejetuba | Uma família para pertencer"
+  description="Somos uma igreja em Brejetuba apaixonada por Jesus. Cultos aos domingos (08h e 19h) e estudos às quartas (19h30). Conheça a PIB Brejetuba e faça parte da família!"
+>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Primeira Igreja Batista em Brejetuba · Espírito Santo</span>
+    <h1>Uma família para você pertencer.</h1>
+    <p>Uma igreja apaixonada por Jesus, profunda em conhecimento e relevante para a cidade.</p>
+    <div class="actions">
+      <a class="btn" href="/primeira-visita/">Planeje sua visita ↗</a>
+      <a class="btn btn-light" href="/quero-fazer-parte-da-familia/">Quero fazer parte da família ↗</a>
+    </div>
+    <div class="hero-note">
+      <span>✦ Domingo às 08h e 19h</span>
+      <span>✦ Quarta-feira às 19h30</span>
+      <span>✦ Centro de Brejetuba - ES</span>
+    </div>
+  </div>
+</section>
 
 <!-- Seção de Boas-vindas -->
-<section class="section"><div class="wrap split"><div><span class="eyebrow">Bem-vindo à nossa casa</span><h2>Você pode chegar como está.</h2><p>Talvez você já frequente uma igreja há anos. Talvez esteja pensando em entrar pela primeira vez. Queremos receber você, ouvir sua história e caminhar juntos na fé em Jesus.</p><p>Reunimos pessoas do Centro e da zona rural de Brejetuba para adorar, estudar a Bíblia, orar e servir. A fé cresce em relacionamentos: há lugar para sua história e suas perguntas.</p><a class="btn" href="/primeira-visita/">Saiba como é a primeira visita ↗</a></div><img src="/images/igreja-reunida.jpg" alt="Comunidade reunida para o culto na PIB Brejetuba" loading="lazy" width="685" height="913"/></div></section>
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Bem-vindo à PIB Brejetuba</span>
+      <h2>Bem-vindo à nossa mesa. Você pode chegar como está.</h2>
+      <p>
+        Acreditamos que a igreja é uma família para caminhar todos os dias, de portas abertas.
+        Seja você morador do Centro, da zona rural de Brejetuba ou um visitante pela primeira vez,
+        estamos prontos para acolher sua história e caminhar juntos no amor de Cristo.
+      </p>
+      <p>
+        Na Primeira Igreja Batista em Brejetuba, nos reunimos para louvar, estudar a Bíblia, orar
+        e servir nossa comunidade com carinho e verdade.
+      </p>
+      <a class="btn" href="/primeira-visita/">Saiba como é a primeira visita ↗</a>
+    </div>
+    <img
+      src="/images/igreja-reunida.jpg"
+      alt="Culto de domingo na Igreja Batista em Brejetuba - comunidade reunida em adoração"
+      loading="lazy"
+      width="685"
+      height="913"
+    />
+  </div>
+</section>
 
-<!-- 1. Área de Avisos logo abaixo da seção de boas-vindas -->
-<section class="section section-soft" id="area-de-avisos"><div class="wrap"><div class="section-head"><span class="eyebrow">Avisos e Destaques</span><h2>Fique por dentro das nossas programações especiais</h2><p>Acompanhe os comunicados importantes, eventos marcantes e agendas oficiais da PIB Brejetuba.</p></div>
-<div class="grid notice-grid">
-  <article class="card notice-card" id="aniversario-destaque" data-event-end="2026-11-22"><span class="eyebrow">21 e 22 de Novembro · Celebração</span><h3>18 Anos da PIB Brejetuba</h3><p>Ano da maturidade! Três celebrações em dois dias com Pr. Amaury Bertoqui e Ministério Fortaleza de Adoração.</p><a class="btn btn-small" href="/aniversario-18-anos/">Ver programação completa ↗</a></article>
-  <article class="card notice-card"><span class="eyebrow">Campanha Especial</span><h3>Missões Nacionais 2026</h3><p>Para que todo o Brasil ouça — venha participar e apoiar a mobilização missionária da nossa igreja.</p><a class="btn btn-small" href="/missoes-nacionais-2026/">Conheça a campanha ↗</a></article>
-  <article class="card notice-card"><span class="eyebrow">Planejamento da Igreja</span><h3>Calendário 2026</h3><p>Consulte os encontros habituais, datas de eventos e a programação planejada para o ano de 2026.</p><a class="btn btn-small btn-light" href="/calendario2026/">Acessar calendário ↗</a></article>
-  <article class="card notice-card"><span class="eyebrow">Comunicado Oficial</span><h3>Assembleia Extraordinária</h3><p>Edital de convocação e comunicados públicos para acompanhamento da comunidade.</p><a class="btn btn-small btn-light" href="/extraordinaria/">Ver edital ↗</a></article>
-</div></div></section>
+<!-- Seção Nossa Caminhada (Desdobrando o slogan) -->
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Nossa Caminhada em Brejetuba</span>
+      <h2>Como vivemos nossa fé no dia a dia</h2>
+      <p>Desdobramos nossa missão em três pilares essenciais que orientam nossa comunidade cristã em Brejetuba.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Apaixonada por Jesus</h3>
+        <p><strong>Viver para Ele e como Ele.</strong> Mais do que religião, um relacionamento real e um desejo de sermos cópias autênticas de Jesus no dia a dia.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Profunda em Conhecimento</h3>
+        <p><strong>Luz para a mente, fogo para o coração.</strong> Estudo sério das Escrituras para transformar o caráter à imagem de Cristo.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Relevante para a Cidade</h3>
+        <p><strong>A fé que sai das quatro paredes.</strong> Ser as mãos e os pés de Jesus em Brejetuba através de amor prático e serviço.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- 2. Unificação da jornada do visitante -->
-<section class="section" id="jornada-visitante"><div class="wrap"><div class="section-head"><span class="eyebrow">Sua Primeira Visita</span><h2>Tudo o que você precisa para nos visitar</h2><p>Reunimos os horários dos cultos, localização e orientações para que você se sinta em casa desde o primeiro momento.</p></div>
-<div class="visitor-flow-grid">
-  <div class="visitor-step-card">
-    <span class="step-num">01 · Primeira visita</span>
-    <h3>Venha como está</h3>
-    <p>Não é preciso agendar nem vestir roupas especiais. Nossa comunidade acolhe todas as pessoas com carinho e respeito.</p>
-    <a href="/primeira-visita/" style="margin-top:auto;font-weight:750">Guia do visitante ↗</a>
+<!-- Seção de Encontros -->
+<section class="section" id="jornada-visitante">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Cultos em Brejetuba</span>
+      <h2>Fé que se vive junto.</h2>
+      <p>Reunimos a comunidade para adorar a Deus, estudar as Escrituras e fortalecer a comunhão.</p>
+    </div>
+    <div class="visitor-flow-grid">
+      <div class="visitor-step-card">
+        <span class="step-num">01 · Escola Bíblica</span>
+        <h3>Domingo às 08h</h3>
+        <p>Um tempo de aprendizado prático da Palavra de Deus para todas as idades na PIB Brejetuba.</p>
+        <a href="/escola-biblica/" style="margin-top:auto;font-weight:750">Conhecer a Escola Bíblica ↗</a>
+      </div>
+      <div class="visitor-step-card">
+        <span class="step-num">02 · Celebração</span>
+        <h3>Domingo às 19h</h3>
+        <p>Culto principal com louvor, oração e pregação bíblica reunindo as famílias de Brejetuba.</p>
+        <a href="/horarios-dos-cultos/" style="margin-top:auto;font-weight:750">Detalhes dos cultos ↗</a>
+      </div>
+      <div class="visitor-step-card">
+        <span class="step-num">03 · Ensino Bíblico</span>
+        <h3>Quarta-feira às 19h30</h3>
+        <p>Estudo bíblico expositivo no meio da semana para renovação espiritual e tirar dúvidas.</p>
+        <a href="/estudos-biblicos/" style="margin-top:auto;font-weight:750">Estudos bíblicos ↗</a>
+      </div>
+    </div>
   </div>
-  <div class="visitor-step-card">
-    <span class="step-num">02 · Horários dos cultos</span>
-    <h3>Nossas reuniões</h3>
-    <p><strong>Domingo:</strong> 08h (EBD) e 19h (Culto de Celebração)<br/><strong>Quarta-feira:</strong> 19h30 (Ensino Bíblico)</p>
-    <a href="/horarios-dos-cultos/" style="margin-top:auto;font-weight:750">Ver detalhes dos cultos ↗</a>
+</section>
+
+<!-- Área de Avisos e Destaques -->
+<section class="section section-soft" id="area-de-avisos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Avisos e Destaques</span>
+      <h2>Programação e comunicados da PIB Brejetuba</h2>
+      <p>Acompanhe os comunicados importantes, eventos marcantes e agendas oficiais da nossa igreja em Brejetuba.</p>
+    </div>
+    <div class="grid notice-grid">
+      <article class="card notice-card" id="aniversario-destaque" data-event-end="2026-11-22">
+        <span class="eyebrow">21 e 22 de Novembro · Celebração</span>
+        <h3>18 Anos da PIB Brejetuba</h3>
+        <p>Ano da maturidade! Três celebrações em dois dias com Pr. Amaury Bertoqui e Ministério Fortaleza de Adoração.</p>
+        <a class="btn btn-small" href="/aniversario-18-anos/">Ver programação completa ↗</a>
+      </article>
+      <article class="card notice-card">
+        <span class="eyebrow">Campanha Especial</span>
+        <h3>Missões Nacionais 2026</h3>
+        <p>Para que todo o Brasil ouça — venha participar e apoiar a mobilização missionária da nossa igreja.</p>
+        <a class="btn btn-small" href="/missoes-nacionais-2026/">Conheça a campanha ↗</a>
+      </article>
+      <article class="card notice-card">
+        <span class="eyebrow">Planejamento da Igreja</span>
+        <h3>Calendário 2026</h3>
+        <p>Consulte os encontros habituais, datas de eventos e a programação planejada para o ano de 2026.</p>
+        <a class="btn btn-small btn-light" href="/calendario2026/">Acessar calendário ↗</a>
+      </article>
+      <article class="card notice-card">
+        <span class="eyebrow">Comunicado Oficial</span>
+        <h3>Assembleia Extraordinária</h3>
+        <p>Edital de convocação e comunicados públicos para acompanhamento da comunidade em Brejetuba.</p>
+        <a class="btn btn-small btn-light" href="/extraordinaria/">Ver edital ↗</a>
+      </article>
+    </div>
   </div>
-  <div class="visitor-step-card">
-    <span class="step-num">03 · Como chegar</span>
-    <h3>Endereço no Centro</h3>
-    <p>{site.address}<br/><small style="color:var(--muted)">Em frente ao Posto Pernambuco</small></p>
-    <a href={site.maps} target="_blank" rel="noopener noreferrer" style="margin-top:auto;font-weight:750">Abrir no Google Maps ↗</a>
-  </div>
-</div>
-</div></section>
+</section>
 
 <!-- Próximos encontros -->
-<section class="section section-soft"><div class="wrap"><div class="section-head"><span class="eyebrow">Próximos encontros</span><h2>A vida da igreja acontece em comunidade.</h2><p>Confira as celebrações e venha participar. Os eventos passados deixam de aparecer aqui automaticamente.</p></div><div class="grid grid-2" id="proximos-eventos">{eventos.map(e=><article class="card content-card" data-event-end={(e.data.endDate??e.data.date).toISOString().slice(0,10)}><span class="content-category">{e.data.category}</span><span class="event-date">{e.data.timeLabel??e.data.date.toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo'})}</span><h3><a href={`/eventos/${e.id}/`}>{e.data.title} ↗</a></h3><p>{e.data.description}</p></article>)}</div><p id="sem-eventos" hidden>Novas programações serão divulgadas em breve. Enquanto isso, <a href="/horarios-dos-cultos/">confira nossos encontros semanais</a>.</p><p class="section-more"><a href="/eventos/">Ver agenda completa ↗</a></p></div></section>
-
-<!-- 3. Interface Conhecimento em formato de Hub/Grid -->
-<section class="section" id="hub-conhecimento"><div class="wrap"><div class="section-head"><span class="eyebrow">Central de Conhecimento</span><h2>Hub de Estudos, Devocionais e Artigos</h2><p>Recursos bíblicos preparados para fortalecer sua fé, enriquecer seus estudos e orientar sua caminhada diária.</p></div>
-<div class="grid hub-grid">
-  <article class="card hub-card">
-    <div class="hub-card-header"><span class="hub-badge">Estudos Bíblicos</span><h3>Séries de Estudo</h3></div>
-    <p>Aprofunde-se nas Escrituras com séries temáticas e expositivas para aplicar a Palavra no cotidiano.</p>
-    <div class="hub-links">
-      <a href="/artigos/estudos-de-quarta-feira/" class="hub-link-item"><strong>Série: Estudos de Quarta-feira</strong><span>Inspirados em A Vida em Cristo (John Stott) ↗</span></a>
-      <a href="/estudos-biblicos/" class="hub-main-action">Ver Central de Estudos Bíblicos ↗</a>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda da Comunidade</span>
+      <h2>Próximos eventos na Igreja Batista em Brejetuba</h2>
+      <p>Confira as celebrações e programações especiais da igreja em Brejetuba.</p>
     </div>
-  </article>
-
-  <article class="card hub-card">
-    <div class="hub-card-header"><span class="hub-badge hub-badge-coming">Devocionais · Em breve</span><h3>Devocionais Diários</h3></div>
-    <p>Espaço preparado para novas leituras e meditações diárias para inspirar sua oração e estudo pessoal.</p>
-    <div class="hub-links">
-      <a href="/devocionais/" class="hub-link-item"><strong>Devocionais e Reflexões</strong><span>Acesse nosso guia para a caminhada diária ↗</span></a>
-      <a href="/devocionais/" class="hub-main-action">Explorar Devocionais ↗</a>
+    <div class="grid grid-2" id="proximos-eventos">
+      {eventos.map(e => (
+        <article class="card content-card" data-event-end={(e.data.endDate ?? e.data.date).toISOString().slice(0, 10)}>
+          <span class="content-category">{e.data.category}</span>
+          <span class="event-date">{e.data.timeLabel ?? e.data.date.toLocaleDateString('pt-BR', {timeZone: 'America/Sao_Paulo'})}</span>
+          <h3><a href={`/eventos/${e.id}/`}>{e.data.title} ↗</a></h3>
+          <p>{e.data.description}</p>
+        </article>
+      ))}
     </div>
-  </article>
+    <p id="sem-eventos" hidden>Novas programações serão divulgadas em breve. Enquanto isso, <a href="/horarios-dos-cultos/">confira nossos encontros semanais</a>.</p>
+    <p class="section-more"><a href="/eventos/">Ver agenda completa ↗</a></p>
+  </div>
+</section>
 
-  <article class="card hub-card">
-    <div class="hub-card-header"><span class="hub-badge">Artigos</span><h3>Artigos & Reflexões</h3></div>
-    <p>Leituras recentes sobre fé, vida comunitária e ensinamentos de Jesus.</p>
-    <div class="hub-links">
-      {artigos.map(a=><a href={`/artigos/${a.id}/`} class="hub-link-item"><strong>{a.data.title}</strong><span>{a.data.description} ↗</span></a>)}
-      <a href="/artigos/" class="hub-main-action">Ver Todos os Artigos ↗</a>
+<!-- Central de Conhecimento -->
+<section class="section section-soft" id="hub-conhecimento">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Central de Conhecimento em Brejetuba</span>
+      <h2>Estudos Bíblicos, Devocionais e Mensagens</h2>
+      <p>Recursos bíblicos preparados para fortalecer sua fé, enriquecer seus estudos e orientar sua caminhada diária em Brejetuba.</p>
     </div>
-  </article>
+    <div class="grid hub-grid">
+      <article class="card hub-card">
+        <div class="hub-card-header"><span class="hub-badge">Estudos Bíblicos</span><h3>Séries de Estudo</h3></div>
+        <p>Aprofunde-se nas Escrituras com séries temáticas e expositivas para aplicar a Palavra no cotidiano.</p>
+        <div class="hub-links">
+          <a href="/artigos/estudos-de-quarta-feira/" class="hub-link-item"><strong>Série: Estudos de Quarta-feira</strong><span>Inspirados em A Vida em Cristo (John Stott) ↗</span></a>
+          <a href="/estudos-biblicos/" class="hub-main-action">Ver Central de Estudos Bíblicos ↗</a>
+        </div>
+      </article>
 
-  <article class="card hub-card">
-    <div class="hub-card-header"><span class="hub-badge">Mensagens</span><h3>Sermões & Pregações</h3></div>
-    <p>Reflexões e mensagens ministradas em nossos cultos para ouvir e acompanhar durante a semana.</p>
-    <div class="hub-links">
-      <a href="/mensagens/" class="hub-link-item"><strong>Acervo de Mensagens</strong><span>Ouça e releia sermões pregados na PIB Brejetuba ↗</span></a>
-      <a href="/mensagens/" class="hub-main-action">Ver Mensagens ↗</a>
+      <article class="card hub-card">
+        <div class="hub-card-header"><span class="hub-badge hub-badge-coming">Devocionais · Em breve</span><h3>Devocionais Diários</h3></div>
+        <p>Espaço preparado para novas leituras e meditações diárias para inspirar sua oração e estudo pessoal.</p>
+        <div class="hub-links">
+          <a href="/devocionais/" class="hub-link-item"><strong>Devocionais e Reflexões</strong><span>Acesse nosso guia para a caminhada diária ↗</span></a>
+          <a href="/devocionais/" class="hub-main-action">Explorar Devocionais ↗</a>
+        </div>
+      </article>
+
+      <article class="card hub-card">
+        <div class="hub-card-header"><span class="hub-badge">Artigos</span><h3>Artigos & Reflexões</h3></div>
+        <p>Leituras recentes sobre fé, vida comunitária e ensinamentos de Jesus.</p>
+        <div class="hub-links">
+          {artigos.map(a => (
+            <a href={`/artigos/${a.id}/`} class="hub-link-item"><strong>{a.data.title}</strong><span>{a.data.description} ↗</span></a>
+          ))}
+          <a href="/artigos/" class="hub-main-action">Ver Todos os Artigos ↗</a>
+        </div>
+      </article>
+
+      <article class="card hub-card">
+        <div class="hub-card-header"><span class="hub-badge">Mensagens</span><h3>Sermões & Pregações</h3></div>
+        <p>Reflexões e mensagens ministradas em nossos cultos para ouvir e acompanhar durante a semana.</p>
+        <div class="hub-links">
+          <a href="/mensagens/" class="hub-link-item"><strong>Acervo de Mensagens</strong><span>Ouça e releia sermões pregados na PIB Brejetuba ↗</span></a>
+          <a href="/mensagens/" class="hub-main-action">Ver Mensagens ↗</a>
+        </div>
+      </article>
     </div>
-  </article>
-</div></div></section>
+  </div>
+</section>
 
 <!-- Oração e Acolhimento -->
-<section class="section section-soft"><div class="wrap split"><div><span class="eyebrow">Oração e acolhimento</span><h2>Podemos orar com você.</h2><p>Você não precisa atravessar sozinho os desafios da vida. Se deseja conversar, pedir oração ou conhecer a comunidade, venha nos encontrar em um dos cultos.</p><a class="btn" href="/oracao/">Saiba mais ↗</a></div><div class="card"><h3>Onde estamos</h3><p>{site.address}</p><p>Em frente ao Posto Pernambuco, no Centro.</p><a href={site.maps} target="_blank" rel="noopener noreferrer">Traçar rota no Google Maps ↗</a><p><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">Converse com o Pastor Márcio no WhatsApp ↗</a></p><p><a href={site.instagram} target="_blank" rel="noopener noreferrer">Acompanhe nosso Instagram ↗</a></p></div></div></section>
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Oração e Acolhimento em Brejetuba</span>
+      <h2>Podemos orar com você.</h2>
+      <p>Você não precisa atravessar sozinho os desafios da vida. Se deseja conversar, pedir oração ou conhecer a comunidade, venha nos encontrar em um dos cultos na PIB Brejetuba.</p>
+      <a class="btn" href="/oracao/">Saiba mais sobre oração ↗</a>
+    </div>
+    <div class="card">
+      <h3>Onde estamos em Brejetuba</h3>
+      <p>{site.address}</p>
+      <p>Em frente ao Posto Pernambuco, no Centro de Brejetuba - ES.</p>
+      <a href={site.maps} target="_blank" rel="noopener noreferrer">Traçar rota no Google Maps ↗</a>
+      <p style="margin-top: 12px;">
+        <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">Converse com o Pastor Márcio no WhatsApp ↗</a>
+      </p>
+    </div>
+  </div>
+</section>
 
 <script>
-const now=new Date();
-const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
-const cards=[...document.querySelectorAll<HTMLElement>('[data-event-end]')];
-cards.forEach(card=>{if((card.dataset.eventEnd??'')<today)card.remove()});
-const empty=document.getElementById('sem-eventos');
-if(empty && !document.querySelector('[data-event-end]'))empty.hidden=false;
-const anniversary=document.getElementById('aniversario-destaque');
-if(anniversary && today>'2026-11-22')anniversary.remove();
-const month=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now);
-const seasonal=document.getElementById('setembro-amarelo');
-if(seasonal && month==='9')seasonal.hidden=false;
+const now = new Date();
+const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit'}).format(now);
+const cards = [...document.querySelectorAll<HTMLElement>('[data-event-end]')];
+cards.forEach(card => { if ((card.dataset.eventEnd ?? '') < today) card.remove(); });
+const empty = document.getElementById('sem-eventos');
+if (empty && !document.querySelector('[data-event-end]')) empty.hidden = false;
+const anniversary = document.getElementById('aniversario-destaque');
+if (anniversary && today > '2026-11-22') anniversary.remove();
+const month = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Sao_Paulo', month: 'numeric'}).format(now);
+const seasonal = document.getElementById('setembro-amarelo');
+if (seasonal && month === '9') seasonal.hidden = false;
 </script>
 </Base>
