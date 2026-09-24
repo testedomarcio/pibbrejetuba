@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import {site} from '../data';
 import {pages} from '../page-data';
+import {galleryImages} from '../gallery';
 
 export function getStaticPaths(){return Object.entries(pages).map(([slug,page])=>({params:{slug},props:{page}}))}
 const {page}=Astro.props;
@@ -10,5 +11,5 @@ const isGallery=slug==='galeria';
 ---
 <Base title={page.title} description={page.description}>
 <div class="page-hero"><div class="wrap"><div class="bread"><a href="/">Início</a> / {page.title}</div><span class="eyebrow">{page.eyebrow}</span><h1>{page.title}</h1><p>{page.intro}</p></div></div>
-<section class="section"><div class="wrap"><div class="prose">{page.sections.map(s=><section><h2>{s.heading}</h2><p>{s.body}</p>{s.link&&<p><a href={s.link.href} target={s.link.href.startsWith('http')?'_blank':undefined} rel={s.link.href.startsWith('http')?'noopener noreferrer':undefined}>{s.link.label} ↗</a></p>}</section>)}{isGallery&&<div class="grid grid-2"><figure><img src="/images/comunidade.png" width="1280" height="720" alt="Comunidade reunida no templo"/><figcaption>Comunidade reunida no templo.</figcaption></figure><figure><img src="/images/louvor.png" width="1280" height="720" alt="Louvor durante uma celebração"/><figcaption>Equipe de louvor em uma celebração.</figcaption></figure></div>}</div><div class="cta-panel center"><h2>Há um lugar para você aqui.</h2><p>Conheça nossa comunidade pessoalmente em Brejetuba.</p><div class="actions"><a class="btn" href="/primeira-visita/">Planeje sua visita ↗</a><a class="btn btn-light" href={site.maps} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div></div></div></section>
+<section class="section"><div class="wrap"><div class="prose">{page.sections.map(s=><section><h2>{s.heading}</h2><p>{s.body}</p>{s.link&&<p><a href={s.link.href} target={s.link.href.startsWith('http')?'_blank':undefined} rel={s.link.href.startsWith('http')?'noopener noreferrer':undefined}>{s.link.label} ↗</a></p>}</section>)}</div>{isGallery && <div class="gallery-grid">{galleryImages.map(photo=><figure><img src={photo.src} alt={photo.alt} loading="lazy" width="685" height="913"/><figcaption>{photo.caption}</figcaption></figure>)}</div>}<div class="cta-panel center"><h2>Há um lugar para você aqui.</h2><p>Conheça nossa comunidade pessoalmente em Brejetuba.</p><div class="actions"><a class="btn" href="/primeira-visita/">Planeje sua visita ↗</a><a class="btn btn-light" href={site.maps} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div></div></div></section>
 </Base>

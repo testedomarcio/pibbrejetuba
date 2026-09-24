@@ -22,7 +22,7 @@ O workflow `.github/workflows/deploy.yml` publica a pasta `dist/` a cada push pa
 - Mensagens: `src/content/mensagens/*.md`.
 - Eventos: `src/content/eventos/*.md` (só publique depois de confirmar data e local).
 - Horários/endereço: `src/data.ts`; atualize em um lugar.
-- Fotos: `public/images/`. Substitua por fotos autorizadas e otimizadas quando houver novas imagens.
+- Fotos e logo fornecidas pela igreja: `public/images/`. Atualize os arquivos e seus textos alternativos ao substituir imagens.
 
 Para criar um artigo, copie a estrutura de um arquivo em `src/content/artigos/`, altere `title`, `description`, `date` e o texto. O build cria a página e a inclui no sitemap. `draft: true` impede a publicação do item.
 
@@ -32,4 +32,4 @@ Sitemap gerado automaticamente em `/sitemap-index.xml`, metadados, canonical, Op
 
 ## Antes de divulgar
 
-Confirmar com a igreja: endereço/número, horários, canais de contato, fotos autorizadas e informações específicas de eventos. Não há telefone nem Pix publicado sem confirmação. Google Analytics e Search Console precisam de IDs e acesso à propriedade, por isso não foram inventados.
+Confirmar com a igreja: endereço/número, horários e informações específicas de eventos. O telefone e o e-mail oficiais foram informados pelo Pastor Márcio. Não há Pix publicado sem confirmação. Google Analytics e Search Console precisam de IDs e acesso à propriedade, por isso não foram inventados.

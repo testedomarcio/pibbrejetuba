@@ -2,15 +2,15 @@
 import {site, links} from '../data';
 import '../styles.css';
 interface Props { title: string; description: string; image?: string; type?: 'website'|'article'; jsonLd?: Record<string,unknown>; noindex?: boolean }
-const {title,description,image='/images/comunidade.png',type='website',jsonLd,noindex=false}=Astro.props;
+const {title,description,image='/images/celebracao-comunidade.jpg',type='website',jsonLd,noindex=false}=Astro.props;
 const canonical=new URL(Astro.url.pathname,site.url).toString();
 const fullTitle=title===site.name?title:`${title} | ${site.short}`;
-const church={ '@context':'https://schema.org','@type':'Church','@id':`${site.url}/#igreja`,name:site.name,url:site.url,image:`${site.url}/images/comunidade.png`,address:{'@type':'PostalAddress',streetAddress:'Av. Firmino Teixeira Griffo, 504',addressLocality:'Brejetuba',addressRegion:'ES',addressCountry:'BR'},hasMap:site.maps};
+const church={ '@context':'https://schema.org','@type':'Church','@id':`${site.url}/#igreja`,name:site.name,url:site.url,image:`${site.url}/images/celebracao-comunidade.jpg`,logo:`${site.url}/images/logo.png`,telephone:site.phone,email:site.email,address:{'@type':'PostalAddress',streetAddress:'Av. Firmino Teixeira Griffo, 504',addressLocality:'Brejetuba',addressRegion:'ES',addressCountry:'BR'},hasMap:site.maps};
 ---
 <!doctype html><html lang="pt-BR"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>{fullTitle}</title><meta name="description" content={description}/><meta name="theme-color" content="#4a3326"/>
-<link rel="canonical" href={canonical}/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="canonical" href={canonical}/><link rel="icon" href="/images/logo.png" type="image/png"/>
 {noindex && <meta name="robots" content="noindex,follow"/>}
 <meta property="og:locale" content="pt_BR"/><meta property="og:site_name" content={site.name}/><meta property="og:type" content={type}/><meta property="og:title" content={fullTitle}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL(image,site.url).toString()}/><meta name="twitter:card" content="summary_large_image"/>
 <script type="application/ld+json" set:html={JSON.stringify(church).replace(/</g,'\\u003c')}/>
@@ -19,11 +19,11 @@ const church={ '@context':'https://schema.org','@type':'Church','@id':`${site.ur
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <div class="topline"><div class="wrap">Uma comunidade de fé no coração de Brejetuba, ES <a href="/horarios-dos-cultos/">Veja nossos horários <span aria-hidden="true">↗</span></a></div></div>
 <header class="header"><div class="wrap nav">
-<a class="brand" href="/" aria-label="PIB Brejetuba — página inicial"><span class="brand-icon" aria-hidden="true">✝</span><span>PRIMEIRA IGREJA BATISTA<small>EM BREJETUBA</small></span></a>
+<a class="brand" href="/" aria-label="PIB Brejetuba — página inicial"><img class="brand-logo" src="/images/logo.png" width="366" height="462" alt=""/><span>PRIMEIRA IGREJA BATISTA<small>EM BREJETUBA</small></span></a>
 <nav aria-label="Navegação principal" class="desktop-nav">{links.map(l=><a href={l.href} aria-current={Astro.url.pathname===l.href?'page':undefined}>{l.label}</a>)}</nav>
 <a class="btn btn-small nav-cta" href="/primeira-visita/">Venha nos visitar <span aria-hidden="true">↗</span></a>
 <details class="mobile-menu"><summary aria-label="Abrir menu">Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Navegação móvel">{links.map(l=><a href={l.href}>{l.label}</a>)}</nav></details>
 </div></header>
 <main id="conteudo"><slot/></main>
-<footer class="footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="/"><span class="brand-icon" aria-hidden="true">✝</span><span>PRIMEIRA IGREJA BATISTA<small>EM BREJETUBA</small></span></a><p>{site.slogan}</p><p>Uma comunidade para conhecer Jesus, crescer na Palavra e servir nossa cidade.</p></div><div><h2>Encontre-nos</h2><p>{site.address}</p><a href={site.maps} target="_blank" rel="noopener noreferrer">Abrir rota no Google Maps ↗</a><p>Domingo: 08h e 19h<br/>Quarta-feira: 19h30</p></div><div><h2>Explore</h2><a href="/primeira-visita/">Sua primeira visita</a><a href="/no-que-cremos/">No que cremos</a><a href="/discipulado/">Discipulado</a><a href="/oracao/">Oração</a><a href="/artigos/">Artigos</a><a href="/privacidade/">Privacidade</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} Primeira Igreja Batista em Brejetuba</span><span>Brejetuba · Espírito Santo</span></div></footer>
+<footer class="footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="/"><img class="brand-logo" src="/images/logo.png" width="366" height="462" alt=""/><span>PRIMEIRA IGREJA BATISTA<small>EM BREJETUBA</small></span></a><p>{site.slogan}</p><p>Uma comunidade para conhecer Jesus, crescer na Palavra e servir nossa cidade.</p></div><div><h2>Encontre-nos</h2><p>{site.address}</p><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp do Pastor Márcio: {site.phoneDisplay} ↗</a><a href={`tel:${site.phone}`}>Ligar: {site.phoneDisplay}</a><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.maps} target="_blank" rel="noopener noreferrer">Abrir rota no Google Maps ↗</a><p>Domingo: 08h e 19h<br/>Quarta-feira: 19h30</p></div><div><h2>Explore</h2><a href="/primeira-visita/">Sua primeira visita</a><a href="/lideranca/">Liderança</a><a href="/galeria/">Galeria</a><a href="/no-que-cremos/">No que cremos</a><a href="/discipulado/">Discipulado</a><a href="/oracao/">Oração</a><a href="/artigos/">Artigos</a><a href="/privacidade/">Privacidade</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} Primeira Igreja Batista em Brejetuba</span><span>Brejetuba · Espírito Santo</span></div></footer>
 </body></html>
