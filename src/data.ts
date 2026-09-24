@@ -18,6 +18,7 @@ export const site = {
 };
 export const links = [
   {href:'/primeira-visita/',label:'Primeira visita'},
+  {href:'/eventos/',label:'Agenda'},
   {href:'/quem-somos/',label:'Quem somos'},
   {href:'/horarios-dos-cultos/',label:'Cultos'},
   {href:'/ministerios/',label:'Ministérios'},
