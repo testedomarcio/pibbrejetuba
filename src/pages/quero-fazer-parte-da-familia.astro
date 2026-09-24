@@ -82,6 +82,21 @@ import Base from '../layouts/Base.astro';
             </select>
           </div>
 
+          <div class="form-group checkbox-group">
+            <label class="form-checkbox-label">
+              <input
+                type="checkbox"
+                id="aceito_privacidade"
+                name="aceito_privacidade"
+                required
+                class="form-checkbox"
+              />
+              <span>
+                Concordo com a <a href="https://batistabrejetuba.com.br/privacidade/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a> da igreja no tratamento dos meus dados. <span class="required-star">*</span>
+              </span>
+            </label>
+          </div>
+
           <button type="submit" id="submit-btn" class="btn" style="width: 100%; margin-top: 10px;">
             Enviar cadastro
           </button>
