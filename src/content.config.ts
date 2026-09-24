@@ -4,5 +4,5 @@ const common = z.object({ title: z.string(), description: z.string(), date: z.co
 export const collections = {
   artigos: defineCollection({loader: glob({pattern:'**/*.md',base:'./src/content/artigos'}),schema:common}),
   mensagens: defineCollection({loader: glob({pattern:'**/*.md',base:'./src/content/mensagens'}),schema:common.extend({ passage: z.string().optional() })}),
-  eventos: defineCollection({loader: glob({pattern:'**/*.md',base:'./src/content/eventos'}),schema:common.extend({ location: z.string().optional() })})
+  eventos: defineCollection({loader: glob({pattern:'**/*.md',base:'./src/content/eventos'}),schema:common.extend({ location: z.string().optional(), endDate: z.coerce.date().optional(), timeLabel: z.string().optional() })})
 };
