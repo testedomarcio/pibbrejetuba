@@ -53,7 +53,7 @@ export const mainNavLinks = [
 ];
 
 export const links = [
-  { href: '/primeira-visita/', label: 'Primeira visita' },
+  { href: '/primeira-visita/', label: 'Novo por aqui?' },
   { href: '/quero-fazer-parte-da-familia/', label: 'Quero fazer parte da família' },
   ...navGroups.flatMap(g => g.items),
   ...mainNavLinks,
