@@ -10,6 +10,7 @@ export const site = {
   whatsapp: 'https://wa.me/5527998738910',
   instagram: 'https://www.instagram.com/batista.brejetuba/',
   email: 'contato@batistabrejetuba.com.br',
+  googleReview: 'https://g.page/r/CXAZMbwhRB52EBM/review',
   schedule: [
     {day:'Domingo', time:'08h', name:'Escola Bíblica Dominical'},
     {day:'Domingo', time:'19h', name:'Culto de celebração'},
