@@ -32,7 +32,8 @@
 .social-icon{display:inline-block;vertical-align:middle;flex-shrink:0}
 .mobile-social-link{display:flex!important;align-items:center;gap:8px;font-weight:600;color:var(--coffee);padding:6px 0}
 .mobile-social-link:hover{color:var(--clay)}
-.footer-social-link{display:inline-flex!important;align-items:center;gap:8px}
+.footer-social-link,.footer-review-link{display:inline-flex!important;align-items:center;gap:8px}
+.star-icon{display:inline-block;vertical-align:middle;flex-shrink:0}
 .mobile-group{display:flex;flex-direction:column;gap:4px;border-top:1px solid #eee;padding-top:8px;margin-top:4px}
 .mobile-group-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--clay);margin-bottom:2px}
 .mobile-highlight{font-weight:750;color:var(--clay)}
